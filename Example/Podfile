@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ONECore_Example' do
+  pod 'ONECore', :path => '../'
+
+  target 'ONECore_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
