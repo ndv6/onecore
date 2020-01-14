@@ -24,7 +24,6 @@ pod 'ONECore'
 ```
 
 ## Dependencies
-* [DLRadioButton](https://github.com/DavydLiu/DLRadioButton)
 * [SDWebImage](https://github.com/SDWebImage/SDWebImage)
 
 ## Deployment
