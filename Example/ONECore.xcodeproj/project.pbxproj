@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		148599B523CF25A800D2FB57 /* Array+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A123CF25A800D2FB57 /* Array+ExtensionTest.swift */; };
+		148599B623CF25A800D2FB57 /* Double+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A223CF25A800D2FB57 /* Double+ExtensionTest.swift */; };
+		148599B723CF25A800D2FB57 /* String+ConstraintTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A323CF25A800D2FB57 /* String+ConstraintTest.swift */; };
+		148599B823CF25A800D2FB57 /* String+FormatTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A423CF25A800D2FB57 /* String+FormatTest.swift */; };
+		148599B923CF25A800D2FB57 /* String+KeyboardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A523CF25A800D2FB57 /* String+KeyboardTest.swift */; };
+		148599BA23CF25A800D2FB57 /* Int+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A623CF25A800D2FB57 /* Int+ExtensionTest.swift */; };
+		148599BB23CF25A800D2FB57 /* String+DateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A723CF25A800D2FB57 /* String+DateTest.swift */; };
+		148599BC23CF25A800D2FB57 /* Date+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A823CF25A800D2FB57 /* Date+ExtensionTest.swift */; };
+		148599BD23CF25A800D2FB57 /* NSObject+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599A923CF25A800D2FB57 /* NSObject+ExtensionTest.swift */; };
+		148599BE23CF25A800D2FB57 /* TimeInterval+FormatTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599AA23CF25A800D2FB57 /* TimeInterval+FormatTest.swift */; };
+		148599BF23CF25A800D2FB57 /* Float+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599AB23CF25A800D2FB57 /* Float+ExtensionTest.swift */; };
+		148599C023CF25A800D2FB57 /* String+ValidationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599AC23CF25A800D2FB57 /* String+ValidationTest.swift */; };
+		148599C123CF25A800D2FB57 /* Options+ExtensionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599AD23CF25A800D2FB57 /* Options+ExtensionTest.swift */; };
+		148599C223CF25A800D2FB57 /* SizeHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599AF23CF25A800D2FB57 /* SizeHelperTest.swift */; };
+		148599C323CF25A800D2FB57 /* NavigationHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599B023CF25A800D2FB57 /* NavigationHelperTest.swift */; };
+		148599C423CF25A800D2FB57 /* NavigationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599B323CF25A800D2FB57 /* NavigationControllerTest.swift */; };
+		148599C523CF25A800D2FB57 /* TabBarNavigationControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148599B423CF25A800D2FB57 /* TabBarNavigationControllerTest.swift */; };
 		14AE38DA23CF1D5F004C3F19 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE388123CF1D5E004C3F19 /* CoreManager.swift */; };
 		14AE38DB23CF1D5F004C3F19 /* FontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE388323CF1D5E004C3F19 /* FontSize.swift */; };
 		14AE38DC23CF1D5F004C3F19 /* FrameSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE388423CF1D5E004C3F19 /* FrameSize.swift */; };
@@ -75,7 +92,6 @@
 		14AE391E23CF1E8B004C3F19 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE391D23CF1E8B004C3F19 /* R.generated.swift */; };
 		24FAF1D7E09AF9DED1183DD4 /* Pods_ONECore_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546B4A6E155662E809EEA724 /* Pods_ONECore_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		FE37706DDB1C9A25B155C247 /* Pods_ONECore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF980817BD10759D66528406 /* Pods_ONECore_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +106,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		148599A123CF25A800D2FB57 /* Array+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599A223CF25A800D2FB57 /* Double+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599A323CF25A800D2FB57 /* String+ConstraintTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ConstraintTest.swift"; sourceTree = "<group>"; };
+		148599A423CF25A800D2FB57 /* String+FormatTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+FormatTest.swift"; sourceTree = "<group>"; };
+		148599A523CF25A800D2FB57 /* String+KeyboardTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KeyboardTest.swift"; sourceTree = "<group>"; };
+		148599A623CF25A800D2FB57 /* Int+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599A723CF25A800D2FB57 /* String+DateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+DateTest.swift"; sourceTree = "<group>"; };
+		148599A823CF25A800D2FB57 /* Date+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599A923CF25A800D2FB57 /* NSObject+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599AA23CF25A800D2FB57 /* TimeInterval+FormatTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+FormatTest.swift"; sourceTree = "<group>"; };
+		148599AB23CF25A800D2FB57 /* Float+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599AC23CF25A800D2FB57 /* String+ValidationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ValidationTest.swift"; sourceTree = "<group>"; };
+		148599AD23CF25A800D2FB57 /* Options+ExtensionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Options+ExtensionTest.swift"; sourceTree = "<group>"; };
+		148599AF23CF25A800D2FB57 /* SizeHelperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeHelperTest.swift; sourceTree = "<group>"; };
+		148599B023CF25A800D2FB57 /* NavigationHelperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelperTest.swift; sourceTree = "<group>"; };
+		148599B323CF25A800D2FB57 /* NavigationControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerTest.swift; sourceTree = "<group>"; };
+		148599B423CF25A800D2FB57 /* TabBarNavigationControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarNavigationControllerTest.swift; sourceTree = "<group>"; };
 		14AE388123CF1D5E004C3F19 /* CoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		14AE388323CF1D5E004C3F19 /* FontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontSize.swift; sourceTree = "<group>"; };
 		14AE388423CF1D5E004C3F19 /* FrameSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameSize.swift; sourceTree = "<group>"; };
@@ -166,7 +199,6 @@
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ONECore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ONECore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FAACDEC7742313E358282C0 /* Pods-ONECore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONECore_Example.debug.xcconfig"; path = "Target Support Files/Pods-ONECore_Example/Pods-ONECore_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F37D5DFD7EC0E2B29F06C10F /* Pods-ONECore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONECore_Example.release.xcconfig"; path = "Target Support Files/Pods-ONECore_Example/Pods-ONECore_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F9B996D04125D215E097143C /* Pods-ONECore_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONECore_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ONECore_Tests/Pods-ONECore_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +225,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		148599A023CF25A800D2FB57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				148599A123CF25A800D2FB57 /* Array+ExtensionTest.swift */,
+				148599A223CF25A800D2FB57 /* Double+ExtensionTest.swift */,
+				148599A323CF25A800D2FB57 /* String+ConstraintTest.swift */,
+				148599A423CF25A800D2FB57 /* String+FormatTest.swift */,
+				148599A523CF25A800D2FB57 /* String+KeyboardTest.swift */,
+				148599A623CF25A800D2FB57 /* Int+ExtensionTest.swift */,
+				148599A723CF25A800D2FB57 /* String+DateTest.swift */,
+				148599A823CF25A800D2FB57 /* Date+ExtensionTest.swift */,
+				148599A923CF25A800D2FB57 /* NSObject+ExtensionTest.swift */,
+				148599AA23CF25A800D2FB57 /* TimeInterval+FormatTest.swift */,
+				148599AB23CF25A800D2FB57 /* Float+ExtensionTest.swift */,
+				148599AC23CF25A800D2FB57 /* String+ValidationTest.swift */,
+				148599AD23CF25A800D2FB57 /* Options+ExtensionTest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		148599AE23CF25A800D2FB57 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				148599AF23CF25A800D2FB57 /* SizeHelperTest.swift */,
+				148599B023CF25A800D2FB57 /* NavigationHelperTest.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		148599B123CF25A800D2FB57 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				148599B223CF25A800D2FB57 /* NavigationController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		148599B223CF25A800D2FB57 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				148599B323CF25A800D2FB57 /* NavigationControllerTest.swift */,
+				148599B423CF25A800D2FB57 /* TabBarNavigationControllerTest.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 		14AE388023CF1D5E004C3F19 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,8 +571,10 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				148599A023CF25A800D2FB57 /* Extensions */,
+				148599AE23CF25A800D2FB57 /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				148599B123CF25A800D2FB57 /* ViewControllers */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -586,26 +666,25 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "ONECore" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -813,7 +892,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				148599C223CF25A800D2FB57 /* SizeHelperTest.swift in Sources */,
+				148599BE23CF25A800D2FB57 /* TimeInterval+FormatTest.swift in Sources */,
+				148599C123CF25A800D2FB57 /* Options+ExtensionTest.swift in Sources */,
+				148599B623CF25A800D2FB57 /* Double+ExtensionTest.swift in Sources */,
+				148599BC23CF25A800D2FB57 /* Date+ExtensionTest.swift in Sources */,
+				148599BD23CF25A800D2FB57 /* NSObject+ExtensionTest.swift in Sources */,
+				148599B823CF25A800D2FB57 /* String+FormatTest.swift in Sources */,
+				148599B723CF25A800D2FB57 /* String+ConstraintTest.swift in Sources */,
+				148599BB23CF25A800D2FB57 /* String+DateTest.swift in Sources */,
+				148599BF23CF25A800D2FB57 /* Float+ExtensionTest.swift in Sources */,
+				148599B523CF25A800D2FB57 /* Array+ExtensionTest.swift in Sources */,
+				148599B923CF25A800D2FB57 /* String+KeyboardTest.swift in Sources */,
+				148599BA23CF25A800D2FB57 /* Int+ExtensionTest.swift in Sources */,
+				148599C523CF25A800D2FB57 /* TabBarNavigationControllerTest.swift in Sources */,
+				148599C423CF25A800D2FB57 /* NavigationControllerTest.swift in Sources */,
+				148599C023CF25A800D2FB57 /* String+ValidationTest.swift in Sources */,
+				148599C323CF25A800D2FB57 /* NavigationHelperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,12 +946,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -904,12 +1001,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -978,6 +1077,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F9B996D04125D215E097143C /* Pods-ONECore_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -990,6 +1090,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ONECore_Example.app/ONECore_Example";
@@ -1000,6 +1101,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14B4A955F411D52F569B6EB7 /* Pods-ONECore_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
