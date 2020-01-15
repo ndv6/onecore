@@ -1,15 +1,24 @@
 PODS:
-  - ONECore (0.1.0)
+  - ONECore (0.1.0):
+    - SDWebImage
+  - SDWebImage (5.4.2):
+    - SDWebImage/Core (= 5.4.2)
+  - SDWebImage/Core (5.4.2)
 
 DEPENDENCIES:
   - ONECore (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   ONECore:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ONECore: 4b0b18597b7182255d03b6b4b92dff84623b7bb8
+  ONECore: 4f91f78ab0bfdd8bd84446083de831f4f4b61286
+  SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
 
 PODFILE CHECKSUM: d1902aa5a514932e9a0501e6a5f80e41efb16429
 
