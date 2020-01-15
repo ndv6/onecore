@@ -1,0 +1,26 @@
+/* 
+  Localization.strings
+  ONECore
+
+  Created by Sofyan Fradenza Adi on 06/01/20.
+  Copyright © 2020 CocoaPods. All rights reserved.
+*/
+
+// Button Title
+"button-see-all" = "See All";
+"button-ok" = "OK";
+
+// Screen Title
+"screen-title-main-menu" = "ONECore Demo";
+"screen-title-collection-view" = "CollectionView";
+
+// Section Title
+"section-title-breakfast-collection" = "It's breakfast time";
+"section-title-drink-collection" = "The best drink to order at the bar";
+"section-title-snack-collection" = "Customer favourite snack";
+"section-title-place-collection" = "The best places to drink wine";
+
+// Menu Title
+"menu-title-camera-view-controller" = "CameraViewController (TBC)";
+"menu-title-collection-view" = "CollectionView";
+"menu-title-pin-input-view" = "PinInputView (TBC)";
