@@ -1,11 +1,19 @@
 use_frameworks!
 
+platform :ios, '9.0'
+
 target 'ONECore_Example' do
-  pod 'ONECore', :path => '../'
+  use_frameworks!
+  inhibit_all_warnings!
+  
+  pod 'ONECore', :path => '../', :inhibit_warnings => false
+  pod 'SwiftLint'
+  pod 'FLEX', :configurations => ['Debug']
+  pod 'AlamofireObjectMapper', '5.2.0'
+  pod 'R.swift', '5.0.1'
 
   target 'ONECore_Tests' do
     inherit! :search_paths
-
     
   end
 end
