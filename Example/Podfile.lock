@@ -1,0 +1,53 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - FLEX (3.1.2)
+  - ObjectMapper (3.5.1)
+  - ONECore (0.1.0):
+    - SDWebImage
+  - R.swift (5.0.1):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - SDWebImage (5.4.2):
+    - SDWebImage/Core (= 5.4.2)
+  - SDWebImage/Core (5.4.2)
+  - SwiftLint (0.38.2)
+
+DEPENDENCIES:
+  - AlamofireObjectMapper (= 5.2.0)
+  - FLEX
+  - ONECore (from `../`)
+  - R.swift (= 5.0.1)
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - FLEX
+    - ObjectMapper
+    - R.swift
+    - R.swift.Library
+    - SDWebImage
+    - SwiftLint
+
+EXTERNAL SOURCES:
+  ONECore:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  ONECore: 4f91f78ab0bfdd8bd84446083de831f4f4b61286
+  R.swift: a8e1a7e7f38441282fbcb7a3c266076eb38b77ba
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
+  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+
+PODFILE CHECKSUM: 6ac9d505615da5d891bcba75659b4014853d87ef
+
+COCOAPODS: 1.8.4
