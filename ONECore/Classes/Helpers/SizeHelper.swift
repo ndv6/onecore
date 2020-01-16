@@ -92,6 +92,7 @@ public class SizeHelper {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fix 100 warnings
     public static func getOriginYAlignBottom(
@@ -105,6 +106,9 @@ public class SizeHelper {
 >>>>>>> fix linter error
 =======
 >>>>>>> fix 100 warnings
+=======
+    public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
+>>>>>>> fix linter error
         return containerHeight - height - marginBottom
     }
 
