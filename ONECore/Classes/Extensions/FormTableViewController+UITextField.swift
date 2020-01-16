@@ -42,6 +42,7 @@ extension FormTableViewController: UITextFieldDelegate {
         _ textField: UITextField,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
@@ -51,11 +52,16 @@ extension FormTableViewController: UITextFieldDelegate {
             || initialText.count + string.count - range.length <= txtField.maxLength
         var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
 =======
+=======
+>>>>>>> fix 100 warnings
         shouldChangeCharactersIn
         range: NSRange,
         replacementString string: String
     ) -> Bool {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix 100 warnings
         guard let tf: TextField = textField as? TextField else { return true }
         guard let initialText: String = tf.text else { return true }
         let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength

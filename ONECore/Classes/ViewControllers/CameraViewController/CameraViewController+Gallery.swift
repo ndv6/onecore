@@ -21,6 +21,7 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
         _ picker: UIImagePickerController,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
 =======
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
@@ -28,6 +29,9 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
 =======
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
 >>>>>>> fix 70 warnings
+=======
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+>>>>>>> fix 100 warnings
     ) {
         var selectedImage: UIImage?
         if let editedImage = info[.editedImage] as? UIImage {
