@@ -168,13 +168,19 @@ extension Date {
         let fullFormat = DateFormatter()
         fullFormat.locale = Locale(identifier: Language.bahasa)
         fullFormat.dateFormat = DateFormat.date
+        var startDateText = fullFormat.string(from: startDate)
         if startYear == endYear {
             let periodFormat = DateFormatter()
             periodFormat.locale = Locale(identifier: Language.bahasa)
             periodFormat.dateFormat = DateFormat.dayWithMonth
-            return "\(periodFormat.string(from: startDate)) \(Separator.rangePeriod) \(fullFormat.string(from: endDate))"
+            startDateText = periodFormat.string(from: startDate)
         }
-        return "\(fullFormat.string(from: startDate)) \(Separator.rangePeriod) \(fullFormat.string(from: endDate))"
+        return String(
+            format: "%@ %@ %@",
+            startDateText,
+            Separator.rangePeriod,
+            fullFormat.string(from: endDate)
+        )
     }
 
     public func getHumanDate(interval: TimeInterval, todayText: String, yesterdayText: String) -> String {

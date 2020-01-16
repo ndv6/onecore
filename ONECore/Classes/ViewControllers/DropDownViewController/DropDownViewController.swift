@@ -111,7 +111,8 @@ open class DropDownViewController: FormTableViewController {
 
     open func didSelectCell(_ cell: TableViewCell) {
         guard let cell = cell as? DropDownItemCell else { return }
-        if selectedOption.id != cell.option.id || selectedOption.text != cell.option.text {
+        if selectedOption.identifier != cell.option.identifier
+            || selectedOption.text != cell.option.text {
             selectedOption = cell.option
         }
         if let action: OptionSelectionHandler = didSelectAction {

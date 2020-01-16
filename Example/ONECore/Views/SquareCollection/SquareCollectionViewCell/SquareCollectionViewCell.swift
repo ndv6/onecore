@@ -25,7 +25,7 @@ class SquareCollectionViewCell: CollectionViewCell {
     }
 
     func render(viewModel: SquareCollectionViewCellViewModel) {
-        id = viewModel.id
+        identifier = viewModel.id
         titleLabel.text = viewModel.title
         imageView.downloadedFrom(link: viewModel.imageLink)
         didSelectAction = viewModel.didSelectAction

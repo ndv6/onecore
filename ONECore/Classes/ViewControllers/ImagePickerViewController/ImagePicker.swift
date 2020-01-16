@@ -23,7 +23,7 @@ open class ImagePicker: NSObject {
     private var cancelButtonText: String = DefaultValue.emptyString
     private var settingsButtonText: String = DefaultValue.emptyString
     private var permissionText: String = DefaultValue.emptyString
-    
+
     public init(
         presentationController: UIViewController,
         delegate: ImagePickerDelegate,
@@ -46,12 +46,11 @@ open class ImagePicker: NSObject {
         self.settingsButtonText = settingsButtonText
         self.permissionText = permissionText
     }
-    
+
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
         guard UIImagePickerController.isSourceTypeAvailable(type) else {
             return nil
         }
-        
         return UIAlertAction(title: title, style: .default) { [unowned self] _ in
             self.pickerController.sourceType = type
             if self.pickerController.sourceType == .camera {
@@ -113,7 +112,7 @@ open class ImagePicker: NSObject {
         let settingAction = UIAlertAction(
             title: settingsButtonText,
             style: .default,
-            handler: { (action) in
+            handler: { (_) in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 if UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10.0, *) {
@@ -138,7 +137,7 @@ open class ImagePicker: NSObject {
         permissionAlert.addAction(cancelAction)
         self.presentationController?.present(permissionAlert, animated: true, completion: nil)
     }
-    
+
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
         controller.dismiss(animated: true, completion: nil)
         if let tempImage = image {
@@ -166,4 +165,3 @@ extension ImagePicker: UIImagePickerControllerDelegate {
 }
 
 extension ImagePicker: UINavigationControllerDelegate {}
-
