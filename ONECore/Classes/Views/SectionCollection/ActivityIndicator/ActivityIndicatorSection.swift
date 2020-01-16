@@ -13,9 +13,14 @@ open class ActivityIndicatorSection: TableViewSection {
 
     open func configure(contentView: TableView, style: UIActivityIndicatorView.Style) {
         if cell == nil {
-            contentView.tableView.register(ActivityIndicatorCell.self, forCellReuseIdentifier: ActivityIndicatorCell.className)
+            contentView.tableView.register(
+                ActivityIndicatorCell.self,
+                forCellReuseIdentifier: ActivityIndicatorCell.className
+            )
         }
-        cell = contentView.tableView.dequeueReusableCell(withIdentifier: ActivityIndicatorCell.className) as? ActivityIndicatorCell ?? ActivityIndicatorCell()
+        cell = contentView.tableView.dequeueReusableCell(
+            withIdentifier: ActivityIndicatorCell.className
+        ) as? ActivityIndicatorCell ?? ActivityIndicatorCell()
         cell.setActivityIndicatorStyle(style)
         removeAllRows()
         appendRow(cell)

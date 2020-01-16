@@ -13,7 +13,9 @@ open class EmptySection: TableViewSection {
     open func configure(contentView: TableView, height: CGFloat) {
         if cell == nil {
             contentView.tableView.register(EmptyCell.self, forCellReuseIdentifier: EmptyCell.className)
-            cell = contentView.tableView.dequeueReusableCell(withIdentifier: EmptyCell.className) as? EmptyCell ?? EmptyCell()
+            cell = contentView.tableView.dequeueReusableCell(
+                withIdentifier: EmptyCell.className
+            ) as? EmptyCell ?? EmptyCell()
             cell.setHeight(height)
         }
         removeAllRows()

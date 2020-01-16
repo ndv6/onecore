@@ -11,7 +11,7 @@ open class ImageInputTableViewCell: TableViewCell, ImagePickerDelegate {
     open func imagePickerDidSelect(image: UIImage, fileSizeInKB: Int) {}
     private var selectedPhoto: UIImage?
     private var url: String?
-    
+
     open func setSelectedPhoto(image: UIImage) {
         selectedPhoto = image
     }
@@ -19,11 +19,11 @@ open class ImageInputTableViewCell: TableViewCell, ImagePickerDelegate {
     open func getSelectedPhoto() -> UIImage? {
         return selectedPhoto
     }
-    
+
     open func setImageUrl(urlImage: String) {
         url = urlImage
     }
-    
+
     open func getImageUrl() -> String? {
         return url
     }

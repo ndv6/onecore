@@ -44,29 +44,18 @@ extension FormTableViewController: UITextFieldDelegate {
         range: NSRange,
         replacementString string: String
     ) -> Bool {
-        guard let tf: TextField = textField as? TextField else { return true }
-        guard let initialText: String = tf.text else { return true }
-        let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength
-        var result = isValidLength && tf.shouldChangeCharactersIn(range: range, replacementString: string)
+        guard let coreTextField: TextField = textField as? TextField else { return true }
+        guard let initialText: String = coreTextField.text else { return true }
+        let isValidLength = coreTextField.maxLength == 0
+            || initialText.count + string.count - range.length <= coreTextField.maxLength
+        var result = isValidLength && coreTextField.shouldChangeCharactersIn(
+            range: range,
+            replacementString: string
+        )
         if !result && string.isBackspace() { return true }
         if !result { return false }
-        var replacementString = string
-        if tf.autocapitalizationType == .allCharacters {
-            replacementString = replacementString.uppercased()
-            result = false
-        }
-        if tf.isAvoidWhitespaces {
-            replacementString = replacementString.removeAllWhitespaces()
-            result = false
-        }
-        if tf.keyboardType == .numberPad {
-            replacementString = replacementString.digits
-            result = false
-        }
-        if let allowedCharacters = tf.allowedCharacters {
-            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
-            result = false
-        }
+        let replacementString = composeReplacementStringFrom(string, textfield: coreTextField)
+        result = isNeedToOverrideText(textfield: coreTextField)
         let updatedText = getUpdatedText(
             textField,
             shouldChangeCharactersIn: range,
@@ -78,13 +67,13 @@ extension FormTableViewController: UITextFieldDelegate {
             offset: result ? range.lowerBound + string.count + offsetValue : range.lowerBound + string.count
         )
         if !result {
-            tf.text = updatedText
+            coreTextField.text = updatedText
         }
-        if result || initialText != tf.text {
-            tf.didChange(textField: tf, newValue: updatedText)
+        if result || initialText != coreTextField.text {
+            coreTextField.didChange(textField: coreTextField, newValue: updatedText)
         }
         if let cursorLocation = cursorLocation {
-            tf.selectedTextRange = tf.textRange(from: cursorLocation, to: cursorLocation)
+            coreTextField.selectedTextRange = coreTextField.textRange(from: cursorLocation, to: cursorLocation)
         }
         return result
     }
@@ -102,5 +91,29 @@ extension FormTableViewController: UITextFieldDelegate {
             return updatedText
         }
         return DefaultValue.emptyString
+    }
+
+    private func composeReplacementStringFrom(_ text: String, textfield: TextField) -> String {
+        var replacementString = text
+        if textfield.autocapitalizationType == .allCharacters {
+            replacementString = replacementString.uppercased()
+        }
+        if textfield.isAvoidWhitespaces {
+            replacementString = replacementString.removeAllWhitespaces()
+        }
+        if textfield.keyboardType == .numberPad {
+            replacementString = replacementString.digits
+        }
+        if let allowedCharacters = textfield.allowedCharacters {
+            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
+        }
+        return replacementString
+    }
+
+    private func isNeedToOverrideText(textfield: TextField) -> Bool {
+        return textfield.autocapitalizationType == .allCharacters
+            || textfield.isAvoidWhitespaces
+            || textfield.keyboardType == .numberPad
+            || textfield.allowedCharacters != nil
     }
 }

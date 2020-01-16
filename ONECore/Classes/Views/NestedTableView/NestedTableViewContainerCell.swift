@@ -10,7 +10,6 @@ import Foundation
 
 open class NestedTableViewContainerCell: TableViewCell {
     open var nestedTableViewContainer: NestedTableViewContainer {
-        get { return NestedTableViewContainer() }
-        set {}
+        return NestedTableViewContainer()
     }
 }

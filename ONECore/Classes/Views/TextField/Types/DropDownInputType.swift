@@ -32,7 +32,7 @@ open class DropDownInputType: InputType {
         self.navigationController = navigationController
         self.controller = controller
         self.arrowImage = arrowImage
-        if defaultValue.id != DefaultValue.emptyString {
+        if defaultValue.identifier != DefaultValue.emptyString {
             self.controller.selectedOption = defaultValue
             self.textField.text = defaultValue.text
         }

@@ -151,7 +151,7 @@ open class CollectionView: View {
     }
 
     public func registerNib<T>(nibClass: T.Type, resource: String? = nil) where T: CollectionViewCell {
-        var bundle: Bundle? = nil
+        var bundle: Bundle?
         if let resource = resource {
             let nibBundle = Bundle(for: nibClass.self)
             guard let url = nibBundle.url(forResource: resource, withExtension: "bundle") else { return }

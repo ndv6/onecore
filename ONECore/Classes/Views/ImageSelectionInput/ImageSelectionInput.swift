@@ -27,13 +27,13 @@ open class ImageSelectionInput: Button {
             )
         }
     }
-    
+
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     open func resetState() {}
-    
+
     open func setup(
         viewModel: ImageSelectionInputViewModel,
         sender: ImageInputTableViewCell,
