@@ -21,7 +21,10 @@ public class SizeHelper {
         ScreenHeight = UIScreen.main.bounds.height
     }
 
-    public static func calculateWindowSize(navigationController: UINavigationController?, tabBarController: UITabBarController?) {
+    public static func calculateWindowSize(
+        navigationController: UINavigationController?,
+        tabBarController: UITabBarController?
+    ) {
         WindowOffsetTop = UIApplication.shared.statusBarFrame.size.height
         if navigationController != nil {
             WindowOffsetTop = WindowOffsetTop
@@ -50,8 +53,16 @@ public class SizeHelper {
         return width
     }
 
-    public static func getWidthGrid(containerWidth: CGFloat, horizontalPadding: CGFloat, columnSpacing: CGFloat, columnCount: NSInteger) -> CGFloat {
-        let spaceWidth: CGFloat = SizeHelper.getWidth(containerWidth: containerWidth, horizontalPadding: horizontalPadding)
+    public static func getWidthGrid(
+        containerWidth: CGFloat,
+        horizontalPadding: CGFloat,
+        columnSpacing: CGFloat,
+        columnCount: NSInteger
+    ) -> CGFloat {
+        let spaceWidth: CGFloat = SizeHelper.getWidth(
+            containerWidth: containerWidth,
+            horizontalPadding: horizontalPadding
+        )
         let totalColumnSpacing: CGFloat = CGFloat(columnCount - 1) * columnSpacing
         let width: CGFloat = (spaceWidth - totalColumnSpacing) / CGFloat(columnCount)
         return width
@@ -79,7 +90,11 @@ public class SizeHelper {
         return (containerHeight - height) / 2
     }
 
-    public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
+    public static func getOriginYAlignBottom(
+        height: CGFloat,
+        containerHeight: CGFloat,
+        marginBottom: CGFloat
+    ) -> CGFloat {
         return containerHeight - height - marginBottom
     }
 

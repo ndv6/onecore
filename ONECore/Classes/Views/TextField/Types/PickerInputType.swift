@@ -28,7 +28,13 @@ open class PickerInputType: InputType {
     open func didChangeHandler(_ textField: TextField) {}
     open func resetValue() {}
 
-    public init(textField: TextField, instruction: String, sender: FormTableViewController, items: [String], defaultValue: String? = nil) {
+    public init(
+        textField: TextField,
+        instruction: String,
+        sender: FormTableViewController,
+        items: [String],
+        defaultValue: String? = nil
+    ) {
         self.textField = textField
         self.instruction = instruction
         self.sender = sender
@@ -81,7 +87,7 @@ open class PickerInputType: InputType {
     }
 
     private func createToolbarSpacing() -> UIBarButtonItem {
-        return UIBarButtonItem (
+        return UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil,
             action: nil

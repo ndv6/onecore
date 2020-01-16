@@ -34,10 +34,8 @@ public class InputValidator {
     }
 
     public func getLastStatus() -> ValidationStatus {
-        for rule in rules {
-            if !rule.status.isValid {
-                return rule.status
-            }
+        for rule in rules where !rule.status.isValid {
+            return rule.status
         }
         return ValidationStatus()
     }

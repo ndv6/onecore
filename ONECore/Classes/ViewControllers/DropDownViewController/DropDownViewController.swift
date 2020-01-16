@@ -23,7 +23,7 @@ open class DropDownViewController: FormTableViewController {
     public var emptyTitle: String = DefaultValue.emptyString
     private var searchInputCell: TableViewCell?
     private var searchKeyword: String = DefaultValue.emptyString
-    open var searchEnabled: Bool { get { return false } }
+    open var searchEnabled: Bool { return false }
 
     override open func load() {
         super.load()
@@ -87,14 +87,18 @@ open class DropDownViewController: FormTableViewController {
     }
 
     open func renderEmptyState() {
-        guard let cell = contentView.tableView.dequeueReusableCell(withIdentifier: EmptyItemCell.className) as? EmptyItemCell else { return }
+        guard let cell = contentView.tableView.dequeueReusableCell(
+            withIdentifier: EmptyItemCell.className
+        ) as? EmptyItemCell else { return }
         cell.emptyTitle = emptyTitle
         cell.render()
         contentView.appendSection(TableViewSection(cell))
     }
 
     open func createItemCell(_ option: Option) -> DropDownItemCell {
-        let cell = contentView.tableView.dequeueReusableCell(withIdentifier: DropDownItemCell.className) as? DropDownItemCell ?? DropDownItemCell()
+        let cell = contentView.tableView.dequeueReusableCell(
+            withIdentifier: DropDownItemCell.className
+        ) as? DropDownItemCell ?? DropDownItemCell()
         cell.option = option
         cell.textFont = textFont
         cell.textActiveColor = textActiveColor

@@ -24,10 +24,8 @@ public class NumberOfNumeric: Rule {
     override public func validate(_ value: String) -> ValidationStatus {
         status = super.validate(value)
         var numericCounter = 0
-        for letter in value.unicodeScalars {
-            if 48...57 ~= letter.value {
-                numericCounter += 1
-            }
+        for letter in value.unicodeScalars where 48...57 ~= letter.value {
+            numericCounter += 1
         }
         status.isValid = numericCounter == numberOfNumeric
         return status
