@@ -8,10 +8,12 @@
 import Foundation
 
 extension UIViewController {
-    open func presentInFullScreen(_ viewController: UIViewController,
-                              animated: Bool = true,
-                              completion: (() -> Void)? = nil) {
-       viewController.modalPresentationStyle = .fullScreen
-       present(viewController, animated: animated, completion: completion)
-     }
+    open func presentInFullScreen(
+        _ viewController: UIViewController,
+        animated: Bool = true,
+        completion: (() -> Void)? = nil
+    ) {
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: animated, completion: completion)
+    }
 }

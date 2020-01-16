@@ -16,7 +16,7 @@ open class PreviewFile: NSObject, UIDocumentInteractionControllerDelegate {
         super.init()
     }
 
-    public func previewFile(path: URL)  {
+    public func previewFile(path: URL) {
         documentInteractionController = UIDocumentInteractionController(url: path)
         documentInteractionController?.delegate = self
         documentInteractionController?.presentPreview(animated: true)

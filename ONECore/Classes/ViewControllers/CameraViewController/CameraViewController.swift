@@ -99,10 +99,8 @@ open class CameraViewController: TableViewController {
 
     private func getVideoConnection() -> AVCaptureConnection? {
         for connecton in self.imageOutput.connections {
-            for inputPort in connecton.inputPorts {
-                if inputPort.mediaType == AVMediaType.video {
-                    return connecton as AVCaptureConnection
-                }
+            for inputPort in connecton.inputPorts where inputPort.mediaType == AVMediaType.video {
+                return connecton as AVCaptureConnection
             }
         }
         return nil
@@ -118,8 +116,9 @@ open class CameraViewController: TableViewController {
 
     private func captureOutput() {
         guard let videoConnection = self.getVideoConnection() else { return }
-        imageOutput.captureStillImageAsynchronously(from: videoConnection) {
-            (sampleBuffer: CMSampleBuffer?, _) in
+        imageOutput.captureStillImageAsynchronously(
+            from: videoConnection
+        ) { (sampleBuffer: CMSampleBuffer?, _) in
             guard let sampleBuffer = sampleBuffer else { return }
             self.stopCameraSession()
             guard let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(

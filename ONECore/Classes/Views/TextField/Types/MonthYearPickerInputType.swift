@@ -99,7 +99,7 @@ open class MonthYearPickerInputType {
     }
 
     private func createToolbarSpacing() -> UIBarButtonItem {
-        return UIBarButtonItem (
+        return UIBarButtonItem(
             barButtonSystemItem: .flexibleSpace,
             target: nil,
             action: nil

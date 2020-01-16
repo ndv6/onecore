@@ -10,9 +10,7 @@ import UIKit
 
 open class TabBarNavigationController: UITabBarController {
     open var navigationControllers: [NavigationController] {
-        get {
-            return [NavigationController]()
-        }
+        return [NavigationController]()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -29,7 +27,9 @@ open class TabBarNavigationController: UITabBarController {
 
     public func getFirstNavigationController() -> NavigationController {
         guard let viewControllers = viewControllers else { return NavigationController() }
-        guard let navigationController = viewControllers.first as? NavigationController else { return NavigationController() }
+        guard let navigationController = viewControllers.first as? NavigationController else {
+            return NavigationController()
+        }
         return navigationController
     }
 

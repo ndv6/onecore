@@ -38,7 +38,12 @@ extension FormTableViewController: UITextFieldDelegate {
         return true
     }
 
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn
+        range: NSRange,
+        replacementString string: String
+    ) -> Bool {
         guard let tf: TextField = textField as? TextField else { return true }
         guard let initialText: String = tf.text else { return true }
         let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength
@@ -84,7 +89,11 @@ extension FormTableViewController: UITextFieldDelegate {
         return result
     }
 
-    private func getUpdatedText(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> String {
+    private func getUpdatedText(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> String {
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(
                 in: textRange,

@@ -33,7 +33,7 @@ extension UINavigationController {
         navigationBar.layer.shadowRadius = shadowRadius
         navigationBar.layer.shadowOpacity = shadowOppacity
     }
-    
+
     public func hideNavigationShadow() {
         navigationBar.layer.shadowOffset = CGSize(width: 0, height: 0.0)
         navigationBar.layer.shadowRadius = 0

@@ -10,10 +10,8 @@ import Foundation
 
 public class DateHelper {
     public static var dateFormatter: DateFormatter {
-        get {
-            let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: Language.bahasa)
-            return formatter
-        }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: Language.bahasa)
+        return formatter
     }
 }

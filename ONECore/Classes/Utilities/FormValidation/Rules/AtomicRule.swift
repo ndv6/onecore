@@ -12,7 +12,12 @@ public class AtomicRule: Rule {
     private var coupleInputs: [InputProtocol] = [InputProtocol]()
     private var extraValidator: InputValidator?
 
-    public init(name: String, coupleInputs: [InputProtocol], extraValidator: InputValidator? = nil, message: String = DefaultValue.emptyString) {
+    public init(
+        name: String,
+        coupleInputs: [InputProtocol],
+        extraValidator: InputValidator? = nil,
+        message: String = DefaultValue.emptyString
+    ) {
         super.init(name: name, message: message)
         self.coupleInputs = coupleInputs
         self.extraValidator = extraValidator
