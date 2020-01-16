@@ -19,7 +19,11 @@ extension CameraViewController: UINavigationControllerDelegate, UIImagePickerCon
 
     public func imagePickerController(
         _ picker: UIImagePickerController,
+<<<<<<< HEAD
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+=======
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+>>>>>>> fix 100 warnings
     ) {
         var selectedImage: UIImage?
         if let editedImage = info[.editedImage] as? UIImage {

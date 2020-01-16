@@ -40,6 +40,7 @@ extension FormTableViewController: UITextFieldDelegate {
 
     public func textField(
         _ textField: UITextField,
+<<<<<<< HEAD
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
@@ -48,6 +49,16 @@ extension FormTableViewController: UITextFieldDelegate {
         let isValidLength = txtField.maxLength == 0
             || initialText.count + string.count - range.length <= txtField.maxLength
         var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
+=======
+        shouldChangeCharactersIn
+        range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        guard let tf: TextField = textField as? TextField else { return true }
+        guard let initialText: String = tf.text else { return true }
+        let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength
+        var result = isValidLength && tf.shouldChangeCharactersIn(range: range, replacementString: string)
+>>>>>>> fix 100 warnings
         if !result && string.isBackspace() { return true }
         if !result { return false }
         let replacementString = composeReplacementStringFrom(string, textfield: txtField)

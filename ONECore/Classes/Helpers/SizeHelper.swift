@@ -91,14 +91,20 @@ public class SizeHelper {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fix 100 warnings
     public static func getOriginYAlignBottom(
         height: CGFloat,
         containerHeight: CGFloat,
         marginBottom: CGFloat
     ) -> CGFloat {
+<<<<<<< HEAD
 =======
     public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
 >>>>>>> fix linter error
+=======
+>>>>>>> fix 100 warnings
         return containerHeight - height - marginBottom
     }
 
