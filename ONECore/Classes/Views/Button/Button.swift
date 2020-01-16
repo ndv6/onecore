@@ -16,7 +16,7 @@ open class Button: UIButton {
     public var style: ButtonStyle = DefaultButtonStyle() {
         didSet { applyStyle() }
     }
-    override open var isEnabled:Bool {
+    override open var isEnabled: Bool {
         didSet { applyStyle() }
     }
 

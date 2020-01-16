@@ -19,7 +19,9 @@ public class AlphanumericRule: Rule {
 
     override public func validate(_ value: String) -> ValidationStatus {
         status = super.validate(value)
-        status.isValid = value.trimmingCharacters(in: .whitespacesAndNewlines).isValid(regexRule: RegexString.alphanumeric)
+        status.isValid = value.trimmingCharacters(
+            in: .whitespacesAndNewlines
+        ).isValid(regexRule: RegexString.alphanumeric)
         return status
     }
 }

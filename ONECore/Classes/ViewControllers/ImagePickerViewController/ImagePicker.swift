@@ -58,7 +58,6 @@ open class ImagePicker: NSObject {
                 self.pickerController.cameraFlashMode = .off
                 self.pickerController.cameraCaptureMode = .photo
                 self.pickerController.cameraDevice = .rear
-                
                 /*Camera*/
                 AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
                     if response {
@@ -69,7 +68,6 @@ open class ImagePicker: NSObject {
                 }
                 return
             }
-            
             self.presentationController?.present(self.pickerController, animated: true)
         }
     }
@@ -79,34 +77,34 @@ open class ImagePicker: NSObject {
         self.presentationController?.present(self.pickerController, animated: true)
     }
 
-    public func present(from sourceView: UIView, menuTitle: String, cameraButtonTitle: String, galleryButtonTitle: String ) {
-        
+    public func present(
+        from sourceView: UIView,
+        menuTitle: String,
+        cameraButtonTitle: String,
+        galleryButtonTitle: String
+    ) {
         alertController = UIAlertController(title: menuTitle, message: nil, preferredStyle: .actionSheet)
-        
         if let action = self.action(for: .camera, title: cameraButtonTitle) {
             alertController.addAction(action)
         }
         if let action = self.action(for: .photoLibrary, title: galleryButtonTitle) {
             alertController.addAction(action)
         }
-        
         if UIDevice.current.userInterfaceIdiom == .pad {
             alertController.popoverPresentationController?.sourceView = sourceView
             alertController.popoverPresentationController?.sourceRect = sourceView.bounds
             alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
         }
-        
         let gesture = UITapGestureRecognizer(
             target: self,
             action: #selector(self.closeAlert)
         )
-        
         self.presentationController?.present(alertController, animated: true, completion: {
             self.alertController.view.superview?.isUserInteractionEnabled = true
             self.alertController.view.superview?.subviews.first?.addGestureRecognizer(gesture)
         })
     }
-    
+
     @objc func closeAlert() {
         alertController.dismiss(animated: true, completion: nil)
     }

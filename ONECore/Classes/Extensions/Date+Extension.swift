@@ -20,7 +20,7 @@ extension Date {
     public func formatInFullDate(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.date, locale: locale)
     }
-    
+
     public func formatInDay(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.day, locale: locale)
     }

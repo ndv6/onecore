@@ -19,7 +19,10 @@ public class ImportPhoneContactCoordinator: ContactCoordinator {
         self.didSelectAction = didSelectAction
     }
 
-    public override func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
+    public override func contactPicker(
+        _ picker: CNContactPickerViewController,
+        didSelect contactProperty: CNContactProperty
+    ) {
         let contact = contactProperty.contact
         let contactName = CNContactFormatter.string(from: contact, style: .fullName) ?? DefaultValue.emptyString
         guard let phone = contactProperty.value as? CNPhoneNumber else { return }

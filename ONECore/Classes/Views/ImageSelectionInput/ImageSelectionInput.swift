@@ -75,20 +75,20 @@ extension ImageSelectionInput: InputProtocol {
     open func getInputView() -> UIView {
         return self
     }
-    
+
     open func getValue() -> AnyObject {
         return sender.getImageUrl() as AnyObject
     }
-    
+
     open func getText() -> String {
         return sender.getImageUrl() == nil ? DefaultValue.emptyString : name
     }
-    
+
     open func resetValue() {
         sender.removeSelectedPhoto()
         sender.removeImageUrl()
     }
-    
+
     open func isEmpty() -> Bool {
         return getText() == DefaultValue.emptyString
     }
@@ -97,5 +97,3 @@ extension ImageSelectionInput: InputProtocol {
         return tag
     }
 }
-
-
