@@ -68,33 +68,27 @@ public class SizeHelper {
     }
 
     public static func getOriginXAlignCenter(width: CGFloat, containerWidth: CGFloat) -> CGFloat {
-        let x: CGFloat = (containerWidth - width) / 2
-        return x
+        return (containerWidth - width) / 2
     }
 
     public static func getOriginXAlignRight(width: CGFloat, containerWidth: CGFloat, marginRight: CGFloat) -> CGFloat {
-        let x: CGFloat = containerWidth - width - marginRight
-        return x
+        return containerWidth - width - marginRight
     }
 
     public static func getOriginYAlignCenter(height: CGFloat, containerHeight: CGFloat) -> CGFloat {
-        let y: CGFloat = (containerHeight - height) / 2
-        return y
+        return (containerHeight - height) / 2
     }
 
     public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
-        let y: CGFloat = containerHeight - height - marginBottom
-        return y
+        return containerHeight - height - marginBottom
     }
 
     public static func getOriginXAfterFrame(frame: CGRect, horizontalMargin: CGFloat) -> CGFloat {
-        let x: CGFloat = frame.origin.x + frame.size.width + horizontalMargin
-        return x
+        return frame.origin.x + frame.size.width + horizontalMargin
     }
 
     public static func getOriginYAfterFrame(frame: CGRect, verticalMargin: CGFloat) -> CGFloat {
-        let y: CGFloat = frame.origin.y + frame.size.height + verticalMargin
-        return y
+        return frame.origin.y + frame.size.height + verticalMargin
     }
 
     public static func getOffsetBottom(frame: CGRect) -> CGFloat {
@@ -102,8 +96,7 @@ public class SizeHelper {
     }
 
     public static func getOriginYBeforeFrame(frame: CGRect, beforeFrame: CGRect, verticalMargin: CGFloat) -> CGFloat {
-        let y: CGFloat = beforeFrame.origin.y - frame.size.height - verticalMargin
-        return y
+        return beforeFrame.origin.y - frame.size.height - verticalMargin
     }
 
     public static func getPercentValue(percent: CGFloat, valueOf: CGFloat) -> CGFloat {

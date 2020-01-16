@@ -10,9 +10,9 @@ import Foundation
 extension String {
     static let numberFormatter = NumberFormatter()
 
-    subscript (i: Int) -> String {
-        if isEmpty || i >= count { return DefaultValue.emptyString }
-        return String(self[index(startIndex, offsetBy: i)])
+    subscript (idx: Int) -> String {
+        if isEmpty || idx >= count { return DefaultValue.emptyString }
+        return String(self[index(startIndex, offsetBy: idx)])
     }
 
     public var doubleValue: Double {
