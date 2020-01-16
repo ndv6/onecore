@@ -11,7 +11,7 @@ import ContactsUI
 open class ContactCoordinator: NSObject, Coordinator, CNContactPickerDelegate {
     public var controller: ContactViewController
     public var presenter: NavigationController
-    
+
     convenience override init() {
         self.init(presenter: NavigationController())
     }
