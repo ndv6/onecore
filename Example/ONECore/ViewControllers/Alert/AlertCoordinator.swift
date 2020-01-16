@@ -12,7 +12,7 @@ import ONECore
 class AlertCoordinator: Coordinator {
     private var presenter: NavigationController
     private let controller: AlertController
-
+    
     init(
         presenter: NavigationController,
         title: String = DefaultValue.emptyString,

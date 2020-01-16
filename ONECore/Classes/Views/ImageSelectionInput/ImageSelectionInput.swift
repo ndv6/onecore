@@ -35,48 +35,38 @@ open class ImageSelectionInput: Button {
     open func resetState() {}
     
     open func setup(
-        name: String,
+        viewModel: ImageSelectionInputViewModel,
         sender: ImageInputTableViewCell,
-        senderParentView: ViewController,
-        defaultValue: String? = nil,
-        menuTitle: String,
-        cameraButtonTitle: String,
-        galleryButtonTitle: String,
-        cancelButtonText: String,
-        settingsButtonText: String,
-        permissionText: String,
-        compressionQuality: CGFloat,
-        didChangeAction: @escaping InputDidChangeHandler = {_,_  in }
-        ) {
-        self.name = name
+        senderParentView: ViewController
+    ) {
+        self.name = viewModel.name
         self.sender = sender
         self.senderParentView = senderParentView
-        self.menuTitle = menuTitle
-        self.cameraButtonTitle = cameraButtonTitle
-        self.galleryButtonTitle = galleryButtonTitle
-        self.didChangeAction = didChangeAction
+        self.menuTitle = viewModel.menuTitle
+        self.cameraButtonTitle = viewModel.cameraButtonTitle
+        self.galleryButtonTitle = viewModel.galleryButtonTitle
+        self.didChangeAction = viewModel.didChangeAction
         imagePickerController = ImagePicker(
             presentationController: self.senderParentView,
             delegate: sender,
             overlay: UIView(),
-            compressionQuality: compressionQuality,
-            cancelButtonText: cancelButtonText,
-            settingsButtonText: settingsButtonText,
-            permissionText: permissionText
+            compressionQuality: viewModel.compressionQuality,
+            cancelButtonText: viewModel.cancelButtonText,
+            settingsButtonText: viewModel.settingsButtonText,
+            permissionText: viewModel.permissionText
         )
-        
         self.didPressAction = showPhotoSourceOptions
-        
-        if let defaultValue = defaultValue {
+        if let defaultValue = viewModel.defaultValue {
             self.sender.setImageUrl(urlImage: defaultValue)
         }
     }
-    
+
     private func showPhotoSourceOptions() {
-        imagePickerController.present(from: self.senderParentView.view,
-                                      menuTitle: self.menuTitle,
-                                      cameraButtonTitle: self.cameraButtonTitle,
-                                      galleryButtonTitle: self.galleryButtonTitle
+        imagePickerController.present(
+            from: self.senderParentView.view,
+            menuTitle: self.menuTitle,
+            cameraButtonTitle: self.cameraButtonTitle,
+            galleryButtonTitle: self.galleryButtonTitle
         )
     }
 }
