@@ -12,6 +12,7 @@ public class ImageSelectionInputViewModel {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public var defaultValue: String?
 =======
     public var defaultValue: String? = nil
@@ -22,6 +23,9 @@ public class ImageSelectionInputViewModel {
 =======
     public var defaultValue: String? = nil
 >>>>>>> fix linter error
+=======
+    public var defaultValue: String?
+>>>>>>> fix 70 warnings
     public var menuTitle: String = DefaultValue.emptyString
     public var cameraButtonTitle: String = DefaultValue.emptyString
     public var galleryButtonTitle: String = DefaultValue.emptyString
@@ -29,6 +33,7 @@ public class ImageSelectionInputViewModel {
     public var settingsButtonText: String = DefaultValue.emptyString
     public var permissionText: String = DefaultValue.emptyString
     public var compressionQuality: CGFloat = CGFloat(0)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,4 +54,7 @@ public class ImageSelectionInputViewModel {
 =======
     public var didChangeAction: InputDidChangeHandler = {_,_  in }
 >>>>>>> fix linter error
+=======
+    public var didChangeAction: InputDidChangeHandler = { _, _  in }
+>>>>>>> fix 70 warnings
 }
