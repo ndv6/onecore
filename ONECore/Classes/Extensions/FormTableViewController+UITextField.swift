@@ -54,6 +54,7 @@ extension FormTableViewController: UITextFieldDelegate {
         range: NSRange,
         replacementString string: String
     ) -> Bool {
+<<<<<<< HEAD
         guard let tf: TextField = textField as? TextField else { return true }
         guard let initialText: String = tf.text else { return true }
         let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength
@@ -63,6 +64,20 @@ extension FormTableViewController: UITextFieldDelegate {
         if !result { return false }
         let replacementString = composeReplacementStringFrom(string, textfield: txtField)
         result = !isNeedToOverrideText(textfield: txtField)
+=======
+        guard let coreTextField: TextField = textField as? TextField else { return true }
+        guard let initialText: String = coreTextField.text else { return true }
+        let isValidLength = coreTextField.maxLength == 0
+            || initialText.count + string.count - range.length <= coreTextField.maxLength
+        var result = isValidLength && coreTextField.shouldChangeCharactersIn(
+            range: range,
+            replacementString: string
+        )
+        if !result && string.isBackspace() { return true }
+        if !result { return false }
+        let replacementString = composeReplacementStringFrom(string, textfield: coreTextField)
+        result = isNeedToOverrideText(textfield: coreTextField)
+>>>>>>> fix 70 warnings
         let updatedText = getUpdatedText(
             textField,
             shouldChangeCharactersIn: range,
@@ -74,6 +89,7 @@ extension FormTableViewController: UITextFieldDelegate {
             offset: result ? range.lowerBound + string.count + offsetValue : range.lowerBound + string.count
         )
         if !result {
+<<<<<<< HEAD
             txtField.text = updatedText
         }
         if result || initialText != txtField.text {
@@ -81,6 +97,15 @@ extension FormTableViewController: UITextFieldDelegate {
         }
         if let cursorLocation = cursorLocation {
             txtField.selectedTextRange = txtField.textRange(from: cursorLocation, to: cursorLocation)
+=======
+            coreTextField.text = updatedText
+        }
+        if result || initialText != coreTextField.text {
+            coreTextField.didChange(textField: coreTextField, newValue: updatedText)
+        }
+        if let cursorLocation = cursorLocation {
+            coreTextField.selectedTextRange = coreTextField.textRange(from: cursorLocation, to: cursorLocation)
+>>>>>>> fix 70 warnings
         }
         return result
     }
