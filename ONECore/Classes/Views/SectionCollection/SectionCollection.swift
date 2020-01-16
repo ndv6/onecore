@@ -20,73 +20,52 @@ private struct EmptySize {
 
 open class SectionCollection {
     private var contentView: TableView = TableView()
-
     public init() {}
-
     public var emptyXXSmall: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.xxSmall)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.xxSmall)
+        return section
     }
     public var emptyXSmall: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.xSmall)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.xSmall)
+        return section
     }
     public var emptySmall: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.small)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.small)
+        return section
     }
     public var emptyMedium: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.medium)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.medium)
+        return section
     }
     public var emptyLarge: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.large)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.large)
+        return section
     }
     public var emptyXLarge: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.xLarge)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.xLarge)
+        return section
     }
     public var emptyXXLarge: EmptySection {
-        get {
-            let section = EmptySection()
-            section.configure(contentView: contentView, height: EmptySize.xxLarge)
-            return section
-        }
+        let section = EmptySection()
+        section.configure(contentView: contentView, height: EmptySize.xxLarge)
+        return section
     }
     public var activityIndicator: ActivityIndicatorSection {
-        get {
-            let section = ActivityIndicatorSection()
-            section.configure(contentView: contentView, style: .gray)
-            return section
-        }
+        let section = ActivityIndicatorSection()
+        section.configure(contentView: contentView, style: .gray)
+        return section
     }
     public var lightActivityIndicator: ActivityIndicatorSection {
-        get {
-            let section = ActivityIndicatorSection()
-            section.configure(contentView: contentView, style: .white)
-            return section
-        }
+        let section = ActivityIndicatorSection()
+        section.configure(contentView: contentView, style: .white)
+        return section
     }
-
     public func configure(contentView: TableView) {
         self.contentView = contentView
     }

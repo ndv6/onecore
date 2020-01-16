@@ -9,7 +9,7 @@
 import UIKit
 
 open class Option {
-    public var id: String = DefaultValue.emptyString
+    public var identifier: String = DefaultValue.emptyString
     public var tag: String = DefaultValue.emptyString
     public var text: String = DefaultValue.emptyString
     public var value: Any
@@ -18,7 +18,7 @@ open class Option {
     public var isActive: Bool = true
 
     public init(
-        id: String = DefaultValue.emptyString,
+        identifier: String = DefaultValue.emptyString,
         text: String = DefaultValue.emptyString,
         isActive: Bool = true,
         description: String = DefaultValue.emptyString,
@@ -26,7 +26,7 @@ open class Option {
         tag: String = DefaultValue.emptyString,
         isNoteRequired: Bool = false
     ) {
-        self.id = id
+        self.identifier = identifier
         self.text = text
         self.isActive = isActive
         self.description = description

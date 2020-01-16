@@ -42,10 +42,10 @@ open class TabBarNavigationController: UITabBarController {
         if controllers.isEmpty { return nil}
         for index in 0...(controllers.count - 1) {
             guard let nvc = controllers[index] as? NavigationController else { continue }
-            guard let vc = nvc.viewControllers.first as? ViewController else { continue }
-            if vc.isMember(of: destinationClass.self) {
+            guard let viewController = nvc.viewControllers.first as? ViewController else { continue }
+            if viewController.isMember(of: destinationClass.self) {
                 selectedIndex = index
-                return vc
+                return viewController
             }
         }
         return nil

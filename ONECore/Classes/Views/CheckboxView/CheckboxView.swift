@@ -134,19 +134,19 @@ extension CheckboxView: InputProtocol {
     public func getText() -> String {
         return textLabel.text ?? DefaultValue.emptyString
     }
-    
+
     public func getInputView() -> UIView {
         return self
     }
-    
+
     public func getTag() -> Int {
         return tag
     }
-    
+
     public func resetValue() {
         setSelected(false)
     }
-    
+
     public func isEmpty() -> Bool {
         return !value
     }

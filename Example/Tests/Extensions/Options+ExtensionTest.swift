@@ -15,23 +15,23 @@ class OptionsExtensionTest: XCTestCase {
     override func setUp() {
         super.setUp()
         options = [
-            Option(id: "1", text: "a"),
-            Option(id: "2", text: "b"),
-            Option(id: "3", text: "c"),
-            Option(id: "4", text: "d")
+            Option(identifier: "1", text: "a"),
+            Option(identifier: "2", text: "b"),
+            Option(identifier: "3", text: "c"),
+            Option(identifier: "4", text: "d")
         ]
     }
 
     func testRemove() {
         options.remove(options[0])
-        XCTAssertEqual(options[0].id, "2")
-        XCTAssertEqual(options[1].id, "3")
-        XCTAssertEqual(options[2].id, "4")
+        XCTAssertEqual(options[0].identifier, "2")
+        XCTAssertEqual(options[1].identifier, "3")
+        XCTAssertEqual(options[2].identifier, "4")
     }
 
     func testContains() {
-        XCTAssertEqual(options.contains(Option(id: "1", text: "")), true)
-        XCTAssertEqual(options.contains(Option(id: "5", text: "a")), false)
+        XCTAssertEqual(options.contains(Option(identifier: "1", text: "")), true)
+        XCTAssertEqual(options.contains(Option(identifier: "5", text: "a")), false)
     }
 
     func testDisplayText() {

@@ -43,7 +43,7 @@ open class SelectionInput: Button {
         sender: ViewController,
         controller: SelectionInputViewController,
         defaultValue: [Option]? = [Option](),
-        didChangeAction: @escaping InputDidChangeHandler = {_,_  in }
+        didChangeAction: @escaping InputDidChangeHandler = { _, _  in }
     ) {
         self.name = name
         self.sender = sender

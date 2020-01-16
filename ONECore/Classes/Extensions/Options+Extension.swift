@@ -11,13 +11,13 @@ import Foundation
 extension Array where Element: Option {
     public mutating func remove(_ targetOption: Option) {
         self.removeAll { (option) -> Bool in
-            option.id == targetOption.id
+            option.identifier == targetOption.identifier
         }
     }
 
     public func contains(_ findOption: Option) -> Bool {
         return self.contains { (option) -> Bool in
-            option.id == findOption.id
+            option.identifier == findOption.identifier
         }
     }
 
