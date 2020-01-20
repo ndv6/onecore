@@ -35,5 +35,10 @@ public class ImageSelectionInputViewModel {
 >>>>>>> fix linter error
 =======
     public var didChangeAction: InputDidChangeHandler = { _, _  in }
+<<<<<<< HEAD
 >>>>>>> fix 70 warnings
+=======
+
+    public init() {}
+>>>>>>> fix ImageSelectionInputViewModel
 }
