@@ -18,4 +18,6 @@ public class ImageSelectionInputViewModel {
     public var permissionText: String = DefaultValue.emptyString
     public var compressionQuality: CGFloat = CGFloat(0)
     public var didChangeAction: InputDidChangeHandler = { _, _  in }
+
+    public init() {}
 }
