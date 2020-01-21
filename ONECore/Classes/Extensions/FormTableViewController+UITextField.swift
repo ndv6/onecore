@@ -142,6 +142,7 @@ extension FormTableViewController: UITextFieldDelegate {
         )
         if !result && string.isBackspace() { return true }
         if !result { return false }
+<<<<<<< HEAD
         let replacementString = composeReplacementStringFrom(string, textfield: coreTextField)
         result = isNeedToOverrideText(textfield: coreTextField)
 >>>>>>> fix 70 warnings
@@ -169,6 +170,9 @@ extension FormTableViewController: UITextFieldDelegate {
 >>>>>>> revert code
 =======
         var replacementString = composeReplacementStringFrom(string, textfield: txtField)
+=======
+        let replacementString = composeReplacementStringFrom(string, textfield: txtField)
+>>>>>>> fix let variable
         result = !isNeedToOverrideText(textfield: txtField)
 >>>>>>> fix replacement string
         let updatedText = getUpdatedText(
