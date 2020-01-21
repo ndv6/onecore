@@ -91,6 +91,7 @@ extension FormTableViewController: UITextFieldDelegate {
         if !result && string.isBackspace() { return true }
         if !result { return false }
 <<<<<<< HEAD
+<<<<<<< HEAD
         var replacementString = string
         if txtField.autocapitalizationType == .allCharacters {
             replacementString = replacementString.uppercased()
@@ -111,6 +112,9 @@ extension FormTableViewController: UITextFieldDelegate {
 >>>>>>> revert code
 =======
         var replacementString = composeReplacementStringFrom(string, textfield: txtField)
+=======
+        let replacementString = composeReplacementStringFrom(string, textfield: txtField)
+>>>>>>> fix let variable
         result = !isNeedToOverrideText(textfield: txtField)
 >>>>>>> fix replacement string
         let updatedText = getUpdatedText(
