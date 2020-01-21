@@ -40,22 +40,33 @@ extension FormTableViewController: UITextFieldDelegate {
 
     public func textField(
         _ textField: UITextField,
-        shouldChangeCharactersIn
-        range: NSRange,
+        shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-        guard let coreTextField: TextField = textField as? TextField else { return true }
-        guard let initialText: String = coreTextField.text else { return true }
-        let isValidLength = coreTextField.maxLength == 0
-            || initialText.count + string.count - range.length <= coreTextField.maxLength
-        var result = isValidLength && coreTextField.shouldChangeCharactersIn(
-            range: range,
-            replacementString: string
-        )
+        guard let txtField: TextField = textField as? TextField else { return true }
+        guard let initialText: String = txtField.text else { return true }
+        let isValidLength = txtField.maxLength == 0
+            || initialText.count + string.count - range.length <= txtField.maxLength
+        var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
         if !result && string.isBackspace() { return true }
         if !result { return false }
-        let replacementString = composeReplacementStringFrom(string, textfield: coreTextField)
-        result = isNeedToOverrideText(textfield: coreTextField)
+        var replacementString = string
+        if txtField.autocapitalizationType == .allCharacters {
+            replacementString = replacementString.uppercased()
+            result = false
+        }
+        if txtField.isAvoidWhitespaces {
+            replacementString = replacementString.removeAllWhitespaces()
+            result = false
+        }
+        if txtField.keyboardType == .numberPad {
+            replacementString = replacementString.digits
+            result = false
+        }
+        if let allowedCharacters = txtField.allowedCharacters {
+            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
+            result = false
+        }
         let updatedText = getUpdatedText(
             textField,
             shouldChangeCharactersIn: range,
@@ -67,13 +78,13 @@ extension FormTableViewController: UITextFieldDelegate {
             offset: result ? range.lowerBound + string.count + offsetValue : range.lowerBound + string.count
         )
         if !result {
-            coreTextField.text = updatedText
+            txtField.text = updatedText
         }
-        if result || initialText != coreTextField.text {
-            coreTextField.didChange(textField: coreTextField, newValue: updatedText)
+        if result || initialText != txtField.text {
+            txtField.didChange(textField: txtField, newValue: updatedText)
         }
         if let cursorLocation = cursorLocation {
-            coreTextField.selectedTextRange = coreTextField.textRange(from: cursorLocation, to: cursorLocation)
+            txtField.selectedTextRange = txtField.textRange(from: cursorLocation, to: cursorLocation)
         }
         return result
     }
