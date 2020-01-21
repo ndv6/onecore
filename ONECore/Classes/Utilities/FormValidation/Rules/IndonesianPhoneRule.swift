@@ -20,7 +20,7 @@ public class IndonesianPhoneRule: Rule {
 
     override public func validate(_ value: String) -> ValidationStatus {
         status = super.validate(value)
-        status.isValid = (value.prefix(2) == "08" || value.prefix(2) == "62" || value.prefix(3) == "+62") && value.count >= 10 && value.count <= 13
+        status.isValid = (value.prefix(2) == "08" || value.prefix(2) == "62" || value.prefix(3) == "+62") && value.count >= 10 && value.count <= 14
         return status
     }
 }
