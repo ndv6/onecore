@@ -50,7 +50,7 @@ extension FormTableViewController: UITextFieldDelegate {
         var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
         if !result && string.isBackspace() { return true }
         if !result { return false }
-        var replacementString = composeReplacementStringFrom(string, textfield: txtField)
+        let replacementString = composeReplacementStringFrom(string, textfield: txtField)
         result = !isNeedToOverrideText(textfield: txtField)
         let updatedText = getUpdatedText(
             textField,
