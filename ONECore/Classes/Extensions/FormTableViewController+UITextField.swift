@@ -50,23 +50,8 @@ extension FormTableViewController: UITextFieldDelegate {
         var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
         if !result && string.isBackspace() { return true }
         if !result { return false }
-        var replacementString = string
-        if txtField.autocapitalizationType == .allCharacters {
-            replacementString = replacementString.uppercased()
-            result = false
-        }
-        if txtField.isAvoidWhitespaces {
-            replacementString = replacementString.removeAllWhitespaces()
-            result = false
-        }
-        if txtField.keyboardType == .numberPad {
-            replacementString = replacementString.digits
-            result = false
-        }
-        if let allowedCharacters = txtField.allowedCharacters {
-            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
-            result = false
-        }
+        var replacementString = composeReplacementStringFrom(string, textfield: txtField)
+        result = !isNeedToOverrideText(textfield: txtField)
         let updatedText = getUpdatedText(
             textField,
             shouldChangeCharactersIn: range,
