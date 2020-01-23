@@ -22,7 +22,7 @@ class MainMenuCoordinator: Coordinator {
 
     func start() {
         controller.delegate = self
-        sender.present(presenter, animated: true, completion: nil)
+        sender.presentInFullScreen(presenter, animated: true, completion: nil)
     }
 }
 
