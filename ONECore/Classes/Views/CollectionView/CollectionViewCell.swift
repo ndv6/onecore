@@ -10,7 +10,7 @@ import UIKit
 public typealias CollectionViewCellSelectionHandler = (_ cell: CollectionViewCell) -> Void
 
 open class CollectionViewCell: UICollectionViewCell {
-    public var id: String = DefaultValue.emptyString
+    public var identifier: String = DefaultValue.emptyString
     public var didSelectAction: CollectionViewCellSelectionHandler?
 
     override open func awakeFromNib() {
@@ -19,7 +19,7 @@ open class CollectionViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.clear
     }
 
-    func onSelected(){
+    func onSelected() {
         guard let didSelectAction = didSelectAction else { return }
         didSelectAction(self)
     }

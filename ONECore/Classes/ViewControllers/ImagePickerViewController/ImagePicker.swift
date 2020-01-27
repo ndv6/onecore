@@ -23,7 +23,7 @@ open class ImagePicker: NSObject {
     private var cancelButtonText: String = DefaultValue.emptyString
     private var settingsButtonText: String = DefaultValue.emptyString
     private var permissionText: String = DefaultValue.emptyString
-    
+
     public init(
         presentationController: UIViewController,
         delegate: ImagePickerDelegate,
@@ -46,19 +46,17 @@ open class ImagePicker: NSObject {
         self.settingsButtonText = settingsButtonText
         self.permissionText = permissionText
     }
-    
+
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
         guard UIImagePickerController.isSourceTypeAvailable(type) else {
             return nil
         }
-        
         return UIAlertAction(title: title, style: .default) { [unowned self] _ in
             self.pickerController.sourceType = type
             if self.pickerController.sourceType == .camera {
                 self.pickerController.cameraFlashMode = .off
                 self.pickerController.cameraCaptureMode = .photo
                 self.pickerController.cameraDevice = .rear
-                
                 /*Camera*/
                 AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
                     if response {
@@ -69,7 +67,6 @@ open class ImagePicker: NSObject {
                 }
                 return
             }
-            
             self.presentationController?.present(self.pickerController, animated: true)
         }
     }
@@ -79,34 +76,34 @@ open class ImagePicker: NSObject {
         self.presentationController?.present(self.pickerController, animated: true)
     }
 
-    public func present(from sourceView: UIView, menuTitle: String, cameraButtonTitle: String, galleryButtonTitle: String ) {
-        
+    public func present(
+        from sourceView: UIView,
+        menuTitle: String,
+        cameraButtonTitle: String,
+        galleryButtonTitle: String
+    ) {
         alertController = UIAlertController(title: menuTitle, message: nil, preferredStyle: .actionSheet)
-        
         if let action = self.action(for: .camera, title: cameraButtonTitle) {
             alertController.addAction(action)
         }
         if let action = self.action(for: .photoLibrary, title: galleryButtonTitle) {
             alertController.addAction(action)
         }
-        
         if UIDevice.current.userInterfaceIdiom == .pad {
             alertController.popoverPresentationController?.sourceView = sourceView
             alertController.popoverPresentationController?.sourceRect = sourceView.bounds
             alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
         }
-        
         let gesture = UITapGestureRecognizer(
             target: self,
             action: #selector(self.closeAlert)
         )
-        
         self.presentationController?.present(alertController, animated: true, completion: {
             self.alertController.view.superview?.isUserInteractionEnabled = true
             self.alertController.view.superview?.subviews.first?.addGestureRecognizer(gesture)
         })
     }
-    
+
     @objc func closeAlert() {
         alertController.dismiss(animated: true, completion: nil)
     }
@@ -115,7 +112,7 @@ open class ImagePicker: NSObject {
         let settingAction = UIAlertAction(
             title: settingsButtonText,
             style: .default,
-            handler: { (action) in
+            handler: { (_) in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 if UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10.0, *) {
@@ -140,7 +137,7 @@ open class ImagePicker: NSObject {
         permissionAlert.addAction(cancelAction)
         self.presentationController?.present(permissionAlert, animated: true, completion: nil)
     }
-    
+
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
         controller.dismiss(animated: true, completion: nil)
         if let tempImage = image {
@@ -168,4 +165,3 @@ extension ImagePicker: UIImagePickerControllerDelegate {
 }
 
 extension ImagePicker: UINavigationControllerDelegate {}
-

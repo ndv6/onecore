@@ -30,7 +30,7 @@ extension UIImage {
         let sizeInBytes = expectedSize * 1000
         var compressingValue = compressionRatio
         DispatchQueue.global(qos: .userInitiated).async {
-            while (true) {
+            while true {
                 let data = self.jpegData(compressionQuality: compressingValue)
                 if compressingValue <= JpegQuality.lowest.rawValue {
                     DispatchQueue.main.async {
@@ -58,8 +58,8 @@ extension UIImage {
             return UIGraphicsImageRenderer(
                 size: canvas,
                 format: imageRendererFormat
-            ).image {
-                _ in draw(in: CGRect(origin: .zero, size: canvas))
+            ).image { _ in
+                draw(in: CGRect(origin: .zero, size: canvas))
             }
         } else {
             return self

@@ -17,7 +17,7 @@ open class NestedTableViewContainer: View {
     public var didReceiveSizeAction: ReceiveSizeHandler?
 
     open func setupConstraint() {
-        while (true) {
+        while true {
             removeAllSubviews()
             addSubview(contentView)
             contentView.setParentConstraint(parentView: self)

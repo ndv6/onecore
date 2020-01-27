@@ -63,14 +63,14 @@ class MockTabNavigationController: TabBarNavigationController {
                 icon: UIImage(),
                 font: .systemFont(ofSize: 10),
                 selectedIcon: UIImage(),
-                vc: mockViewController
+                viewController: mockViewController
             ),
             NavigationHelper.createTabBarItemNavigationController(
                 title: "second",
                 icon: UIImage(),
                 font: .systemFont(ofSize: 10),
                 selectedIcon: UIImage(),
-                vc: SecondViewController()
+                viewController: SecondViewController()
             )
         ]
     }

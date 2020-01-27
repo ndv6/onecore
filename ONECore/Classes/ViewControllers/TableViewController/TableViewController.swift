@@ -23,10 +23,10 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         refreshControl.tintColor = UIColor.white
         return refreshControl
     }()
-    open var refreshControlTintColor: UIColor { get { return UIColor.white } }
-    open var pullToRefreshEnabled: Bool { get { return false } }
-    open var tableViewBackgroundColor: UIColor { get { return CoreStyle.Color.primaryBackground } }
-    open var tableViewInset: UIEdgeInsets { get { return UIEdgeInsets.zero } }
+    open var refreshControlTintColor: UIColor { return UIColor.white }
+    open var pullToRefreshEnabled: Bool { return false }
+    open var tableViewBackgroundColor: UIColor { return CoreStyle.Color.primaryBackground }
+    open var tableViewInset: UIEdgeInsets { return UIEdgeInsets.zero }
     open func registerNibs() {}
 
     override open func viewDidLoad() {

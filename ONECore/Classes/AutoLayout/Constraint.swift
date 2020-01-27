@@ -24,10 +24,42 @@ open class Constraint {
         top: CGFloat = 0,
         bottom: CGFloat = 0
     ) {
-        self.leading = NSLayoutConstraint(item: childView, attribute: .leading, relatedBy: .equal, toItem: parentView, attribute: .leading, multiplier: 1, constant: leading)
-        self.trailing = NSLayoutConstraint(item: parentView, attribute: .trailing, relatedBy: .equal, toItem: childView, attribute: .trailing, multiplier: 1, constant: trailing)
-        self.top = NSLayoutConstraint(item: childView, attribute: .top, relatedBy: .equal, toItem: parentView, attribute: .top, multiplier: 1, constant: top)
-        self.bottom = NSLayoutConstraint(item: parentView, attribute: .bottom, relatedBy: .equal, toItem: childView, attribute: .bottom, multiplier: 1, constant: bottom)
+        self.leading = NSLayoutConstraint(
+            item: childView,
+            attribute: .leading,
+            relatedBy: .equal,
+            toItem: parentView,
+            attribute: .leading,
+            multiplier: 1,
+            constant: leading
+        )
+        self.trailing = NSLayoutConstraint(
+            item: parentView,
+            attribute: .trailing,
+            relatedBy: .equal,
+            toItem: childView,
+            attribute: .trailing,
+            multiplier: 1,
+            constant: trailing
+        )
+        self.top = NSLayoutConstraint(
+            item: childView,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: parentView,
+            attribute: .top,
+            multiplier: 1,
+            constant: top
+        )
+        self.bottom = NSLayoutConstraint(
+            item: parentView,
+            attribute: .bottom,
+            relatedBy: .equal,
+            toItem: childView,
+            attribute: .bottom,
+            multiplier: 1,
+            constant: bottom
+        )
     }
 
     public func activate() {

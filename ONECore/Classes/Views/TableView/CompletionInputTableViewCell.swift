@@ -9,13 +9,12 @@ import UIKit
 
 open class CompletionInputTableViewCell: TableViewCell {
     private var statusComplete: Bool = false
-    
+
     open func setStatusComplete(_ statusComplete: Bool) {
         self.statusComplete = statusComplete
     }
-    
+
     open func getStatusComplete() -> Bool {
         return statusComplete
     }
-    
 }

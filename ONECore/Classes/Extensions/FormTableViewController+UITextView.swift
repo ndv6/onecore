@@ -18,7 +18,11 @@ extension FormTableViewController: UITextViewDelegate {
         refreshErrorMessage()
     }
 
-    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(
+        _ textView: UITextView,
+        shouldChangeTextIn range: NSRange,
+        replacementText text: String
+    ) -> Bool {
         guard let textArea = textView as? TextArea else { return false }
         return textArea.shouldChangeTextHandler(range: range, replacementText: text)
     }

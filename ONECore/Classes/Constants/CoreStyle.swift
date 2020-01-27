@@ -34,12 +34,12 @@ public struct CoreStyle {
         public static var inputAccessoryInactive: UIColor = .clear
     }
     public struct EmptySection {
-        public static var xxSmall:CGFloat = CGFloat(4)
-        public static var xSmall:CGFloat = CGFloat(10)
-        public static var small:CGFloat = CGFloat(20)
-        public static var medium:CGFloat = CGFloat(30)
-        public static var large:CGFloat = CGFloat(40)
-        public static var xLarge:CGFloat = CGFloat(80)
+        public static var xxSmall: CGFloat = CGFloat(4)
+        public static var xSmall: CGFloat = CGFloat(10)
+        public static var small: CGFloat = CGFloat(20)
+        public static var medium: CGFloat = CGFloat(30)
+        public static var large: CGFloat = CGFloat(40)
+        public static var xLarge: CGFloat = CGFloat(80)
         public static var xxLarge = CGFloat(120)
     }
 }

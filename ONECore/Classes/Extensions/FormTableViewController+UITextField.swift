@@ -38,30 +38,20 @@ extension FormTableViewController: UITextFieldDelegate {
         return true
     }
 
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let tf: TextField = textField as? TextField else { return true }
-        guard let initialText: String = tf.text else { return true }
-        let isValidLength = tf.maxLength == 0 || initialText.count + string.count - range.length <= tf.maxLength
-        var result = isValidLength && tf.shouldChangeCharactersIn(range: range, replacementString: string)
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        guard let txtField: TextField = textField as? TextField else { return true }
+        guard let initialText: String = txtField.text else { return true }
+        let isValidLength = txtField.maxLength == 0
+            || initialText.count + string.count - range.length <= txtField.maxLength
+        var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
         if !result && string.isBackspace() { return true }
         if !result { return false }
-        var replacementString = string
-        if tf.autocapitalizationType == .allCharacters {
-            replacementString = replacementString.uppercased()
-            result = false
-        }
-        if tf.isAvoidWhitespaces {
-            replacementString = replacementString.removeAllWhitespaces()
-            result = false
-        }
-        if tf.keyboardType == .numberPad {
-            replacementString = replacementString.digits
-            result = false
-        }
-        if let allowedCharacters = tf.allowedCharacters {
-            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
-            result = false
-        }
+        let replacementString = composeReplacementStringFrom(string, textfield: txtField)
+        result = !isNeedToOverrideText(textfield: txtField)
         let updatedText = getUpdatedText(
             textField,
             shouldChangeCharactersIn: range,
@@ -73,18 +63,22 @@ extension FormTableViewController: UITextFieldDelegate {
             offset: result ? range.lowerBound + string.count + offsetValue : range.lowerBound + string.count
         )
         if !result {
-            tf.text = updatedText
+            txtField.text = updatedText
         }
-        if result || initialText != tf.text {
-            tf.didChange(textField: tf, newValue: updatedText)
+        if result || initialText != txtField.text {
+            txtField.didChange(textField: txtField, newValue: updatedText)
         }
         if let cursorLocation = cursorLocation {
-            tf.selectedTextRange = tf.textRange(from: cursorLocation, to: cursorLocation)
+            txtField.selectedTextRange = txtField.textRange(from: cursorLocation, to: cursorLocation)
         }
         return result
     }
 
-    private func getUpdatedText(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> String {
+    private func getUpdatedText(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> String {
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(
                 in: textRange,
@@ -93,5 +87,29 @@ extension FormTableViewController: UITextFieldDelegate {
             return updatedText
         }
         return DefaultValue.emptyString
+    }
+
+    private func composeReplacementStringFrom(_ text: String, textfield: TextField) -> String {
+        var replacementString = text
+        if textfield.autocapitalizationType == .allCharacters {
+            replacementString = replacementString.uppercased()
+        }
+        if textfield.isAvoidWhitespaces {
+            replacementString = replacementString.removeAllWhitespaces()
+        }
+        if textfield.keyboardType == .numberPad {
+            replacementString = replacementString.digits
+        }
+        if let allowedCharacters = textfield.allowedCharacters {
+            replacementString = replacementString.filterAllowedCharacters(allowedCharacters)
+        }
+        return replacementString
+    }
+
+    private func isNeedToOverrideText(textfield: TextField) -> Bool {
+        return textfield.autocapitalizationType == .allCharacters
+            || textfield.isAvoidWhitespaces
+            || textfield.keyboardType == .numberPad
+            || textfield.allowedCharacters != nil
     }
 }

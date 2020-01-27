@@ -57,8 +57,18 @@ open class FormTableViewController: TableViewController {
         if !CoreConfig.FormTableViewController.isAutoAvoidKeyboard { return }
         let showSelector = #selector(FormTableViewController.keyboardWillShow(notification:))
         let hideSelector = #selector(FormTableViewController.keyboardWillHide(notification:))
-        NotificationCenter.default.addObserver(self, selector: showSelector, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: hideSelector, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: showSelector,
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: hideSelector,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     @objc open func keyboardWillShow(notification: NSNotification? = nil) {
