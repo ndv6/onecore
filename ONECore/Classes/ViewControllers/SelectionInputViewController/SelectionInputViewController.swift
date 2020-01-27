@@ -11,19 +11,19 @@ import UIKit
 public typealias OptionsSelectionHandler = (_ options: [Option]) -> Void
 
 open class SelectionInputViewController: TableViewController {
-    override open var closeButtonPosition: LayoutPosition { get { return .left } }
-    open var doneButtonTitle: String { get { return DefaultValue.emptyString } }
+    override open var closeButtonPosition: LayoutPosition { return .left }
+    open var doneButtonTitle: String { return DefaultValue.emptyString }
     open var doneButtonStyleAttributes: [NSAttributedString.Key: Any]? {
-        get { return nil }
+        return nil
     }
-    open var separatorInset: UIEdgeInsets { get {
+    open var separatorInset: UIEdgeInsets {
         return UIEdgeInsets(
             top: 0,
             left: 0,
             bottom: 0,
             right: 0
         )
-    }}
+    }
     private var temporarySelectedOptions: [Option] = [Option]()
     public var selectedOptions: [Option] = [Option]()
     public var options: [Option] = [Option]()
@@ -67,7 +67,9 @@ open class SelectionInputViewController: TableViewController {
     }
 
     open func createItemCell(_ option: Option) -> SelectionInputItemCell {
-        return contentView.tableView.dequeueReusableCell(withIdentifier: SelectionInputItemCell.className) as? SelectionInputItemCell ?? SelectionInputItemCell()
+        return contentView.tableView.dequeueReusableCell(
+            withIdentifier: SelectionInputItemCell.className
+        ) as? SelectionInputItemCell ?? SelectionInputItemCell()
     }
 
     open func createHeaderSection(_ title: String) -> TableViewSection {

@@ -80,13 +80,13 @@ extension UIView {
     }
 
     @discardableResult
-    public func addBorders(edges: UIRectEdge,
-                    color: UIColor,
-                    inset: CGFloat = 0.0,
-                    thickness: CGFloat = 1.0) -> [UIView] {
-        
+    public func addBorders(
+        edges: UIRectEdge,
+        color: UIColor,
+        inset: CGFloat = 0.0,
+        thickness: CGFloat = 1.0
+    ) -> [UIView] {
         var borders = [UIView]()
-        
         @discardableResult
         func addBorder(formats: String...) -> UIView {
             let border = UIView(frame: .zero)
@@ -102,29 +102,23 @@ extension UIView {
             borders.append(border)
             return border
         }
-        
-        
         if edges.contains(.top) || edges.contains(.all) {
             addBorder(formats: "V:|-0-[border(==thickness)]", "H:|-inset-[border]-inset-|")
         }
-        
         if edges.contains(.bottom) || edges.contains(.all) {
             addBorder(formats: "V:[border(==thickness)]-0-|", "H:|-inset-[border]-inset-|")
         }
-        
         if edges.contains(.left) || edges.contains(.all) {
             addBorder(formats: "V:|-inset-[border]-inset-|", "H:|-0-[border(==thickness)]")
         }
-        
         if edges.contains(.right) || edges.contains(.all) {
             addBorder(formats: "V:|-inset-[border]-inset-|", "H:[border(==thickness)]-0-|")
         }
-        
         return borders
     }
 
     internal func getFirstTextField() -> TextField? {
-        var textField: TextField? = nil
+        var textField: TextField?
         for subview in subviews {
             if let subview = subview as? TextField {
                 return subview

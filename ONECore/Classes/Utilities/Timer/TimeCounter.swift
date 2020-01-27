@@ -21,9 +21,9 @@ public class TimeCounter {
     private var direction: Int = DefaultValue.emptyInt
     private var interval: TimeInterval = DefaultValue.emptyTimeInterval
     private var ticker: TimeInterval = DefaultValue.emptyTimeInterval
-    public var delegate: TimeCounterDelegate?
+    public weak var delegate: TimeCounterDelegate?
 
-    public init(){}
+    public init() {}
 
     public func setLimit(
         lowerLimit: TimeInterval = DefaultValue.emptyTimeInterval,

@@ -29,4 +29,10 @@ public class StaticDeeplink {
             _ = openAppStore(storeId: StoreId.whatsapp)
         }
     }
+
+    public func openApps(schemeURL: String, storeId: String) {
+        if !schemeURL.openDeeplink() {
+            _ = openAppStore(storeId: storeId)
+        }
+    }
 }

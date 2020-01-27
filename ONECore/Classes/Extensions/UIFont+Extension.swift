@@ -19,7 +19,7 @@ public extension UIFont {
             guard let data = NSData(contentsOf: url) else { return }
             guard let provider = CGDataProvider(data: data) else { return }
             guard let font = CGFont(provider) else { return }
-            var error: Unmanaged<CFError>? = nil
+            var error: Unmanaged<CFError>?
             CTFontManagerRegisterGraphicsFont(font, &error)
         }
     }

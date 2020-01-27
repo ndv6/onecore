@@ -16,10 +16,10 @@ public class InternationalPhoneRule: Rule {
             name
         )
     }
-    
+
     override public func validate(_ value: String) -> ValidationStatus {
         status = super.validate(value)
-        status.isValid = value.prefix(1) == "+" && value.count >= 10 && value.count <= 13
+        status.isValid = value.prefix(1) == "+" && value.count >= 10 && value.count <= 14
         return status
     }
 }

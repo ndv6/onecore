@@ -106,7 +106,8 @@ extension MonthYearPickerView: UIPickerViewDelegate, UIPickerViewDataSource {
         dateComponents.month = month
         dateComponents.year = year
         let currentPeriod = calendar.date(from: dateComponents) ?? Date()
-        if currentPeriod.formatInPeriodValue() < minimumDate.formatInPeriodValue() || currentPeriod.formatInPeriodValue() > maximumDate.formatInPeriodValue() {
+        if currentPeriod.formatInPeriodValue() < minimumDate.formatInPeriodValue()
+            || currentPeriod.formatInPeriodValue() > maximumDate.formatInPeriodValue() {
             component == 0 ? resetMonth() : resetYear()
             return
         }

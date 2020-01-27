@@ -68,7 +68,10 @@ open class TextField: UITextField {
     private func applyStyle() {
         font = style.font
         textColor = style.color
-        attributedPlaceholder = NSAttributedString(string: placeholder ?? DefaultValue.emptyString, attributes: [NSAttributedString.Key.foregroundColor: style.placeholderColor])
+        attributedPlaceholder = NSAttributedString(
+            string: placeholder ?? DefaultValue.emptyString,
+            attributes: [NSAttributedString.Key.foregroundColor: style.placeholderColor]
+        )
         backgroundColor = style.backgroundColor
         tintColor = style.tintColor
     }
@@ -80,7 +83,12 @@ open class TextField: UITextField {
         let iconSize = leftIconContainerSize - (verticalPadding * 2)
         let iconView = UIImageView(frame: CGRect(x: leftPadding, y: verticalPadding, width: iconSize, height: iconSize))
         iconView.image = image
-        let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: leftIconContainerSize, height: leftIconContainerSize))
+        let iconContainerView: UIView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: leftIconContainerSize,
+            height: leftIconContainerSize
+        ))
         iconContainerView.backgroundColor = .clear
         iconContainerView.addSubview(iconView)
         leftView = iconContainerView
@@ -93,7 +101,12 @@ open class TextField: UITextField {
         let iconSize = rightIconContainerSize - (verticalPadding * 2)
         let iconView = UIImageView(frame: CGRect(x: 0, y: verticalPadding, width: iconSize, height: iconSize))
         iconView.image = image
-        let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: rightIconContainerSize, height: rightIconContainerSize))
+        let iconContainerView: UIView = UIView(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: rightIconContainerSize,
+            height: rightIconContainerSize
+        ))
         iconContainerView.backgroundColor = .clear
         iconContainerView.addSubview(iconView)
         rightView = iconContainerView
