@@ -90,31 +90,11 @@ public class SizeHelper {
         return (containerHeight - height) / 2
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fix 100 warnings
-=======
->>>>>>> fix 100 warnings
     public static func getOriginYAlignBottom(
         height: CGFloat,
         containerHeight: CGFloat,
         marginBottom: CGFloat
     ) -> CGFloat {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
->>>>>>> fix linter error
-=======
->>>>>>> fix 100 warnings
-=======
-    public static func getOriginYAlignBottom(height: CGFloat, containerHeight: CGFloat, marginBottom: CGFloat) -> CGFloat {
->>>>>>> fix linter error
-=======
->>>>>>> fix 100 warnings
         return containerHeight - height - marginBottom
     }
 

@@ -22,15 +22,9 @@ public class IndonesianPhoneRule: Rule {
         status = super.validate(value)
         status.isValid = (
             value.prefix(2) == "08"
-<<<<<<< HEAD
                 || value.prefix(2) == "62"
                 || value.prefix(3) == "+62"
         ) && value.count >= 10 && value.count <= 14
-=======
-            || value.prefix(2) == "62"
-            || value.prefix(3) == "+62"
-        ) && value.count >= 10 && value.count <= 13
->>>>>>> fix 100 warnings
         return status
     }
 }
