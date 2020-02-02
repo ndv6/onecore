@@ -144,8 +144,8 @@ open class PinInputView: UIView {
         if containerSize.width == DefaultValue.emptyCGFloat { return }
         removeAllSubviews()
         renderTextField()
-        renderPanViews(containerSize: CGSize(width: 320, height: 64))
-        renderKeyboardButton(containerSize: CGSize(width: 320, height: 64))
+        renderPanViews(containerSize: containerSize)
+        renderKeyboardButton(containerSize: containerSize)
         didChangedValue()
     }
 
