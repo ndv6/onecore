@@ -36,4 +36,33 @@ open class Label: UILabel {
         let index = layoutManager.characterIndex(for: point, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
         return index
     }
+
+    public func setTextWithPartialHighlight(
+        fullText: String,
+        highlightText: String = DefaultValue.emptyString,
+        highlightFont: UIFont,
+        highlightColor: UIColor? = nil
+    ) {
+        let attribute = NSMutableAttributedString(string: fullText)
+        let highlightRange = NSRange(
+            location: fullText.count - highlightText.count,
+            length: highlightText.count
+        )
+        attribute.addAttribute(
+            NSAttributedString.Key.font,
+            value: highlightFont,
+            range: highlightRange
+        )
+        attribute.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: highlightColor ?? UIColor.black,
+            range: NSRange(location: 0, length: fullText.count)
+        )
+        attribute.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: highlightColor ?? UIColor.black,
+            range: highlightRange
+        )
+        self.attributedText = attribute
+    }
 }
