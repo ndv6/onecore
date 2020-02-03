@@ -48,6 +48,5 @@ open class Label: UILabel {
             range: highlightRange
         )
         self.attributedText = attribute
-//        setAttributedTitle(attribute, for: .normal)
     }
 }
