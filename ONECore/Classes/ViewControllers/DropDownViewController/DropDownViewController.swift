@@ -107,6 +107,10 @@ open class DropDownViewController: FormTableViewController {
         return cell
     }
 
+    open func dismiss(with selectedOption: Option) {
+        navigationController?.popViewController(animated: true)
+    }
+
     open func didSelectCell(_ cell: TableViewCell) {
         guard let cell = cell as? DropDownItemCell else { return }
         if selectedOption.identifier != cell.option.identifier
@@ -116,7 +120,7 @@ open class DropDownViewController: FormTableViewController {
         if let action: OptionSelectionHandler = didSelectAction {
             action(selectedOption)
         }
-        navigationController?.popViewController(animated: true)
+        dismiss(with: selectedOption)
     }
 
     open func resetSelection() {
