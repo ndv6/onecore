@@ -10,6 +10,7 @@ import UIKit
 
 open class TableViewController: ViewController, TableViewContainerProtocol {
     private var infiniteScroll: InfiniteScroll = InfiniteScroll()
+    private var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     open var sectionCollection: SectionCollection = SectionCollection()
     open var headerView: UIView = UIView()
     open var contentView: TableView!
@@ -96,11 +97,6 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         configureBackgroundColor()
     }
 
-    open func updateTableViewInset(_ inset: UIEdgeInsets) {
-        if contentView == nil { return }
-        contentView.createTableViewConstraint(inset: inset)
-    }
-
     open func resetCellSelection() {
         if let indexPath = contentView.tableView.indexPathForSelectedRow {
             contentView.tableView.deselectRow(at: indexPath, animated: true)
@@ -167,6 +163,35 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         ])
     }
 
+    open func setupConstraint(inset: UIEdgeInsets = UIEdgeInsets.zero) {
+        if contentView == nil { return }
+        NSLayoutConstraint.deactivate(layoutConstraints)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        layoutConstraints = [
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: inset.left
+            ),
+            contentView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: inset.right * -1
+            ),
+            contentView.topAnchor.constraint(
+                equalTo: headerView.bottomAnchor,
+                constant: inset.top
+            ),
+            contentView.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: inset.bottom * -1
+            )
+        ]
+        NSLayoutConstraint.activate(layoutConstraints)
+    }
+
     override open func configureBackgroundColor(_ color: UIColor? = nil) {
         super.configureBackgroundColor(color)
         let color = color == nil ? tableViewBackgroundColor : color
@@ -175,20 +200,6 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
             view.backgroundColor = color
             view.superview?.backgroundColor = color
         }
-    }
-
-    private func setupConstraint(inset: UIEdgeInsets = UIEdgeInsets.zero) {
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
-            contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
     }
 }
 
