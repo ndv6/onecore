@@ -81,6 +81,10 @@ open class View: UIView {
         if gradientLayer.superlayer != nil { gradientLayer.removeFromSuperlayer() }
     }
 
+    public func removeDropShadow() {
+        shadowLayer.removeFromSuperlayer()
+    }
+
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
         if gradientLayer.superlayer != nil {
