@@ -25,10 +25,12 @@ open class NavigationController: UINavigationController, UIGestureRecognizerDele
     }
 
     open func removePreviousController() {
-        var controllers = self.viewControllers
-        let previousIndex = controllers.count - 2
-        if previousIndex < 0 { return }
-        controllers.remove(at: previousIndex)
-        self.viewControllers = controllers
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+            var controllers = self.viewControllers
+            let previousIndex = controllers.count - 2
+            if previousIndex < 0 { return }
+            controllers.remove(at: previousIndex)
+            self.viewControllers = controllers
+        })
     }
 }
