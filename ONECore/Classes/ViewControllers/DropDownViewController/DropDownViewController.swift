@@ -21,7 +21,7 @@ open class DropDownViewController: FormTableViewController {
     public var separatorInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
     public var contentInset: UIEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     public var emptyTitle: String = DefaultValue.emptyString
-    private var searchInputCell: TableViewCell?
+    private var searchInputCell: UIView?
     private var searchKeyword: String = DefaultValue.emptyString
     open var searchEnabled: Bool { return false }
 
@@ -51,13 +51,12 @@ open class DropDownViewController: FormTableViewController {
         if !searchEnabled || searchInputCell != nil { return }
         guard let searchInputCell = createSearchBarCell() else { return }
         searchInputCell.frame.size.width = contentView.bounds.width
-        contentView.addSubview(searchInputCell)
-        contentView.sendSubviewToBack(searchInputCell)
         if let searchTextField = searchInputCell.getFirstTextField() {
             searchTextField.delegate = self
             searchTextField.returnKeyType = .search
             searchTextField.didChangeAction = didChangeSearchKeyword
         }
+        setHeaderView(searchInputCell)
         self.searchInputCell = searchInputCell
     }
 
@@ -67,7 +66,6 @@ open class DropDownViewController: FormTableViewController {
             renderEmptyState()
             return
         }
-        updateTableViewInset(tableViewInset)
         renderSearchInputCell()
         let section = TableViewSection()
         for option in options {
@@ -109,6 +107,10 @@ open class DropDownViewController: FormTableViewController {
         return cell
     }
 
+    open func dismiss(with selectedOption: Option) {
+        navigationController?.popViewController(animated: true)
+    }
+
     open func didSelectCell(_ cell: TableViewCell) {
         guard let cell = cell as? DropDownItemCell else { return }
         if selectedOption.identifier != cell.option.identifier
@@ -118,14 +120,14 @@ open class DropDownViewController: FormTableViewController {
         if let action: OptionSelectionHandler = didSelectAction {
             action(selectedOption)
         }
-        navigationController?.popViewController(animated: true)
+        dismiss(with: selectedOption)
     }
 
     open func resetSelection() {
         selectedOption = Option()
     }
 
-    open func createSearchBarCell() -> TableViewCell? {
+    open func createSearchBarCell() -> UIView? {
         return nil
     }
 

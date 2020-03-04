@@ -10,7 +10,9 @@ import UIKit
 
 open class TableViewController: ViewController, TableViewContainerProtocol {
     private var infiniteScroll: InfiniteScroll = InfiniteScroll()
+    private var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
     open var sectionCollection: SectionCollection = SectionCollection()
+    open var headerView: UIView = UIView()
     open var contentView: TableView!
     open var pagination: Pagination = Pagination()
     lazy private var refreshControl: UIRefreshControl = {
@@ -31,7 +33,9 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        createHeaderView()
         createContentView()
+        setupConstraint()
     }
 
     override open func viewWillAppear(_ animated: Bool) {
@@ -75,10 +79,14 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         tbc.setTabBarVisible(visible: navigation.viewControllers.first == self, animated: true)
     }
 
+    open func createHeaderView() {
+        headerView = UIView()
+        headerView.backgroundColor = .clear
+        view.addSubview(headerView)
+    }
+
     open func createContentView() {
-        var frame = UIScreen.main.bounds
-        frame.size.height = SizeHelper.WindowHeight
-        contentView = TableView(frame: frame, inset: tableViewInset)
+        contentView = TableView()
         contentView.delegate = self
         contentView.commonInit(
             sender: self,
@@ -86,17 +94,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         )
         renderRefreshControl()
         view.addSubview(contentView)
-        setContentViewParentConstraint()
         configureBackgroundColor()
-    }
-
-    open func updateTableViewInset(_ inset: UIEdgeInsets) {
-        if contentView == nil { return }
-        contentView.createTableViewConstraint(inset: inset)
-    }
-
-    open func setContentViewParentConstraint() {
-        contentView.setParentConstraint(parentView: view)
     }
 
     open func resetCellSelection() {
@@ -152,6 +150,46 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
 
     open func setInfiniteScrollLoadingState(isLoading: Bool) {
         infiniteScroll.isLoading = isLoading
+    }
+
+    open func setHeaderView(_ view: UIView) {
+        headerView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: headerView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
+            view.topAnchor.constraint(equalTo: headerView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
+        ])
+    }
+
+    open func setupConstraint(inset: UIEdgeInsets = UIEdgeInsets.zero) {
+        if contentView == nil { return }
+        NSLayoutConstraint.deactivate(layoutConstraints)
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        layoutConstraints = [
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            contentView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor,
+                constant: inset.left
+            ),
+            contentView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor,
+                constant: inset.right * -1
+            ),
+            contentView.topAnchor.constraint(
+                equalTo: headerView.bottomAnchor,
+                constant: inset.top
+            ),
+            contentView.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor,
+                constant: inset.bottom * -1
+            )
+        ]
+        NSLayoutConstraint.activate(layoutConstraints)
     }
 
     override open func configureBackgroundColor(_ color: UIColor? = nil) {
