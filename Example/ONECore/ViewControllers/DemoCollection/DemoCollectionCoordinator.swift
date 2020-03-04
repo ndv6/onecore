@@ -17,7 +17,7 @@ class DemoCollectionCoordinator: Coordinator {
     init(presenter: NavigationController) {
         self.presenter = presenter
         self.controller = DemoCollectionViewController()
-        self.controller.title = R.string.localizable.screenTitleCollectionView()
+        self.controller.title = R.string.localizable.menuTitleCollectionView()
         self.controller.demoCollectionViewModel = DemoCollectionCoordinator.demoCollectionViewModel
         self.controller.foodCollectionCellViewModel = DemoCollectionCoordinator.foodCollectionCellViewModel
         self.controller.drinkCollectionCellViewModel = DemoCollectionCoordinator.drinkCollectionCellViewModel

@@ -25,7 +25,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         refreshControl.tintColor = UIColor.white
         return refreshControl
     }()
-    open var refreshControlTintColor: UIColor { return UIColor.white }
+    open var refreshControlTintColor: UIColor { return CoreStyle.Color.refreshControlTintColor }
     open var pullToRefreshEnabled: Bool { return false }
     open var tableViewBackgroundColor: UIColor { return CoreStyle.Color.primaryBackground }
     open var tableViewInset: UIEdgeInsets { return UIEdgeInsets.zero }

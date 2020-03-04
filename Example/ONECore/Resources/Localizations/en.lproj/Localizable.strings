@@ -12,7 +12,6 @@
 
 // Screen Title
 "screen-title-main-menu" = "ONECore Demo";
-"screen-title-collection-view" = "CollectionView";
 
 // Section Title
 "section-title-breakfast-collection" = "It's breakfast time";
@@ -23,4 +22,5 @@
 // Menu Title
 "menu-title-camera-view-controller" = "CameraViewController (TBC)";
 "menu-title-collection-view" = "CollectionView";
+"menu-title-table-view" = "TableView";
 "menu-title-pin-input-view" = "PinInputView (TBC)";

@@ -90,6 +90,15 @@
 		14AE391923CF1D5F004C3F19 /* SquareCollectionViewCellViewModel+Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE38D823CF1D5F004C3F19 /* SquareCollectionViewCellViewModel+Place.swift */; };
 		14AE391A23CF1D5F004C3F19 /* SquareCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE38D923CF1D5F004C3F19 /* SquareCollectionViewCellViewModel.swift */; };
 		14AE391E23CF1E8B004C3F19 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE391D23CF1E8B004C3F19 /* R.generated.swift */; };
+		14BE24BA240F7BF00057CE4A /* RegularTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE24B9240F7BF00057CE4A /* RegularTextFieldStyle.swift */; };
+		14BE24C0240F7E6F0057CE4A /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE24BE240F7E6E0057CE4A /* TextFieldCell.swift */; };
+		14BE24C1240F7E6F0057CE4A /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14BE24BF240F7E6E0057CE4A /* TextFieldCell.xib */; };
+		14BE24C3240F81410057CE4A /* TextFieldCell+Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE24C2240F81410057CE4A /* TextFieldCell+Setter.swift */; };
+		14BE24C6240F81D20057CE4A /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE24C5240F81D20057CE4A /* PrimaryButtonStyle.swift */; };
+		14EA1D2B240F640A00610220 /* DemoTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA1D2A240F640A00610220 /* DemoTableViewViewController.swift */; };
+		14EA1D2D240F644B00610220 /* DemoTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA1D2C240F644B00610220 /* DemoTableViewCoordinator.swift */; };
+		14EA1D2F240F64B300610220 /* DemoTableViewViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA1D2E240F64B300610220 /* DemoTableViewViewControllerDelegate.swift */; };
+		14EA1D31240F64FC00610220 /* DemoTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EA1D30240F64FC00610220 /* DemoTableViewViewModel.swift */; };
 		24FAF1D7E09AF9DED1183DD4 /* Pods_ONECore_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546B4A6E155662E809EEA724 /* Pods_ONECore_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		FE37706DDB1C9A25B155C247 /* Pods_ONECore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF980817BD10759D66528406 /* Pods_ONECore_Example.framework */; };
@@ -190,6 +199,15 @@
 		14AE38D923CF1D5F004C3F19 /* SquareCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 		14AE391D23CF1E8B004C3F19 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		14B4A955F411D52F569B6EB7 /* Pods-ONECore_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ONECore_Tests.release.xcconfig"; path = "Target Support Files/Pods-ONECore_Tests/Pods-ONECore_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		14BE24B9240F7BF00057CE4A /* RegularTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTextFieldStyle.swift; sourceTree = "<group>"; };
+		14BE24BE240F7E6E0057CE4A /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		14BE24BF240F7E6E0057CE4A /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		14BE24C2240F81410057CE4A /* TextFieldCell+Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextFieldCell+Setter.swift"; sourceTree = "<group>"; };
+		14BE24C5240F81D20057CE4A /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		14EA1D2A240F640A00610220 /* DemoTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewViewController.swift; sourceTree = "<group>"; };
+		14EA1D2C240F644B00610220 /* DemoTableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCoordinator.swift; sourceTree = "<group>"; };
+		14EA1D2E240F64B300610220 /* DemoTableViewViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewViewControllerDelegate.swift; sourceTree = "<group>"; };
+		14EA1D30240F64FC00610220 /* DemoTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewViewModel.swift; sourceTree = "<group>"; };
 		1B49082A5F1115B5D407D5FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		41FF12BBFD631F2FBA6E3B96 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		435BFB5F0086479E01AF3C88 /* ONECore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ONECore.podspec; path = ../ONECore.podspec; sourceTree = "<group>"; };
@@ -358,6 +376,7 @@
 		14AE389B23CF1D5E004C3F19 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				14EA1D27240F5F0100610220 /* DemoTableView */,
 				14AE389C23CF1D5E004C3F19 /* DemoCollection */,
 				14AE38A323CF1D5E004C3F19 /* Alert */,
 				14AE38A623CF1D5E004C3F19 /* Root */,
@@ -447,6 +466,7 @@
 		14AE38C023CF1D5F004C3F19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				14BE24BB240F7CFB0057CE4A /* Component */,
 				14AE38C123CF1D5F004C3F19 /* MenuItem */,
 				14AE38C523CF1D5F004C3F19 /* SquareCollection */,
 			);
@@ -518,6 +538,52 @@
 			path = SquareCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		14BE24B7240F7BC70057CE4A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				14BE24C4240F81C20057CE4A /* ButtonStyle */,
+				14BE24B8240F7BE20057CE4A /* TextFieldStyle */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		14BE24B8240F7BE20057CE4A /* TextFieldStyle */ = {
+			isa = PBXGroup;
+			children = (
+				14BE24B9240F7BF00057CE4A /* RegularTextFieldStyle.swift */,
+			);
+			path = TextFieldStyle;
+			sourceTree = "<group>";
+		};
+		14BE24BB240F7CFB0057CE4A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				14BE24BE240F7E6E0057CE4A /* TextFieldCell.swift */,
+				14BE24C2240F81410057CE4A /* TextFieldCell+Setter.swift */,
+				14BE24BF240F7E6E0057CE4A /* TextFieldCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		14BE24C4240F81C20057CE4A /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				14BE24C5240F81D20057CE4A /* PrimaryButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		14EA1D27240F5F0100610220 /* DemoTableView */ = {
+			isa = PBXGroup;
+			children = (
+				14EA1D2C240F644B00610220 /* DemoTableViewCoordinator.swift */,
+				14EA1D2A240F640A00610220 /* DemoTableViewViewController.swift */,
+				14EA1D2E240F64B300610220 /* DemoTableViewViewControllerDelegate.swift */,
+				14EA1D30240F64FC00610220 /* DemoTableViewViewModel.swift */,
+			);
+			path = DemoTableView;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -552,6 +618,7 @@
 				14AE388723CF1D5E004C3F19 /* Resources */,
 				14AE38B523CF1D5F004C3F19 /* ServiceModels */,
 				14AE389123CF1D5E004C3F19 /* Services */,
+				14BE24B7240F7BC70057CE4A /* Styles */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				14AE389B23CF1D5E004C3F19 /* ViewControllers */,
 				14AE38C023CF1D5F004C3F19 /* Views */,
@@ -708,6 +775,7 @@
 			files = (
 				14AE38F323CF1D5F004C3F19 /* LaunchScreen.xib in Resources */,
 				14AE390A23CF1D5F004C3F19 /* MenuItemCell.xib in Resources */,
+				14BE24C1240F7E6F0057CE4A /* TextFieldCell.xib in Resources */,
 				14AE38E123CF1D5F004C3F19 /* Images.xcassets in Resources */,
 				14AE38F523CF1D5F004C3F19 /* RootViewController.xib in Resources */,
 				14AE38DF23CF1D5F004C3F19 /* Icons.xcassets in Resources */,
@@ -853,6 +921,7 @@
 				14AE391923CF1D5F004C3F19 /* SquareCollectionViewCellViewModel+Place.swift in Sources */,
 				14AE38F023CF1D5F004C3F19 /* DemoCollectionCoordinator.swift in Sources */,
 				14AE38DC23CF1D5F004C3F19 /* FrameSize.swift in Sources */,
+				14EA1D31240F64FC00610220 /* DemoTableViewViewModel.swift in Sources */,
 				14AE38DE23CF1D5F004C3F19 /* Colors.swift in Sources */,
 				14AE38DA23CF1D5F004C3F19 /* CoreManager.swift in Sources */,
 				14AE38ED23CF1D5F004C3F19 /* DemoCollectionViewController+Binding.swift in Sources */,
@@ -861,11 +930,15 @@
 				14AE38F923CF1D5F004C3F19 /* MainMenuViewControllerDelegate.swift in Sources */,
 				14AE38EE23CF1D5F004C3F19 /* DemoCollectionViewModel.swift in Sources */,
 				14AE390B23CF1D5F004C3F19 /* SquareCollectionView.swift in Sources */,
+				14EA1D2D240F644B00610220 /* DemoTableViewCoordinator.swift in Sources */,
 				14AE390723CF1D5F004C3F19 /* UIWindow+Flex.swift in Sources */,
+				14BE24C3240F81410057CE4A /* TextFieldCell+Setter.swift in Sources */,
 				14AE391323CF1D5F004C3F19 /* SquareCollectionCell.swift in Sources */,
 				14AE38FB23CF1D5F004C3F19 /* Place.swift in Sources */,
 				14AE390623CF1D5F004C3F19 /* RequestGetFoods.swift in Sources */,
 				14AE38EF23CF1D5F004C3F19 /* DemoCollectionViewController+Render.swift in Sources */,
+				14EA1D2B240F640A00610220 /* DemoTableViewViewController.swift in Sources */,
+				14EA1D2F240F64B300610220 /* DemoTableViewViewControllerDelegate.swift in Sources */,
 				14AE38FE23CF1D5F004C3F19 /* Food.swift in Sources */,
 				14AE38FC23CF1D5F004C3F19 /* Drink.swift in Sources */,
 				14AE390023CF1D5F004C3F19 /* RequestGetSnacks.swift in Sources */,
@@ -876,12 +949,14 @@
 				14AE391023CF1D5F004C3F19 /* FoodSquareCollectionCellViewModel.swift in Sources */,
 				14AE390323CF1D5F004C3F19 /* RequestGetDrinks.swift in Sources */,
 				14AE38F723CF1D5F004C3F19 /* RootCoordinator.swift in Sources */,
+				14BE24BA240F7BF00057CE4A /* RegularTextFieldStyle.swift in Sources */,
 				14AE38E723CF1D5F004C3F19 /* Service.swift in Sources */,
 				14AE38F823CF1D5F004C3F19 /* MainMenuCoordinator.swift in Sources */,
 				14AE390E23CF1D5F004C3F19 /* PlaceSquareCollectionCellViewModel.swift in Sources */,
 				14AE38F223CF1D5F004C3F19 /* AlertController.swift in Sources */,
 				14AE390223CF1D5F004C3F19 /* ResponseGetFoods.swift in Sources */,
 				14AE390423CF1D5F004C3F19 /* RequestGetPlaces.swift in Sources */,
+				14BE24C6240F81D20057CE4A /* PrimaryButtonStyle.swift in Sources */,
 				14AE390923CF1D5F004C3F19 /* MenuItemViewModel.swift in Sources */,
 				14AE390823CF1D5F004C3F19 /* MenuItemCell.swift in Sources */,
 				14AE38F123CF1D5F004C3F19 /* AlertCoordinator.swift in Sources */,
@@ -900,6 +975,7 @@
 				14AE38FA23CF1D5F004C3F19 /* MainMenuViewController.swift in Sources */,
 				14AE38EC23CF1D5F004C3F19 /* DemoCollectionViewControllerDelegate.swift in Sources */,
 				14AE390523CF1D5F004C3F19 /* ResponseGetSnacks.swift in Sources */,
+				14BE24C0240F7E6F0057CE4A /* TextFieldCell.swift in Sources */,
 				14AE38E423CF1D5F004C3F19 /* Service+GetPlaces.swift in Sources */,
 				14AE38E623CF1D5F004C3F19 /* Service+GetSnacks.swift in Sources */,
 				14AE38E823CF1D5F004C3F19 /* ErrorResponse.swift in Sources */,

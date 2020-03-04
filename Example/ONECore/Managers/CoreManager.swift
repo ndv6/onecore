@@ -37,6 +37,7 @@ class CoreManager {
         CoreStyle.Color.navigationText = UIColor.white
         CoreStyle.Color.primaryBackground = UIColor.white
         CoreStyle.Color.imageBackground = UIColor.lightGray
+        CoreStyle.Color.refreshControlTintColor = Colors.primary
     }
 
     private func setupCoreEmptySection() {

@@ -12,7 +12,6 @@ import ONECore
 class DemoCollectionViewController: TableViewController {
     override var navigationBarStyle: UIBarStyle { return UIBarStyle.black }
     override var pullToRefreshEnabled: Bool { return true }
-    override var refreshControlTintColor: UIColor { return Colors.primary }
     internal weak var delegate: DemoCollectionViewControllerDelegate?
     internal var demoCollectionViewModel: DemoCollectionViewModel?
     internal var foodCollectionCellViewModel: FoodSquareCollectionCellViewModel?

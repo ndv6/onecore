@@ -12,6 +12,7 @@ class MainMenuCoordinator: Coordinator {
     private let sender: UIViewController
     private var presenter: NavigationController
     private let controller: MainMenuViewController
+    private var demoTableViewCoordinator: DemoTableViewCoordinator?
     private var demoCollectionCoordinator: DemoCollectionCoordinator?
 
     init(sender: UIViewController) {
@@ -39,15 +40,17 @@ extension MainMenuCoordinator: MainMenuViewControllerDelegate {
 extension MainMenuCoordinator {
     private func setupMainMenus() {
         controller.menus.removeAll()
-        registerDemoCameraCoordinator()
+        registerDemoTableViewCoordinator()
         registerDemoCollectionCoordinator()
+        registerDemoCameraCoordinator()
         registerDemoPinInputCoordinator()
     }
 
-    private func registerDemoCameraCoordinator() {
+    private func registerDemoTableViewCoordinator() {
+        demoTableViewCoordinator = DemoTableViewCoordinator(presenter: presenter)
         controller.menus.append(MenuItemViewModel(
-            title: R.string.localizable.menuTitleCameraViewController(),
-            destinationCoordinator: nil //#todo
+            title: R.string.localizable.menuTitleTableView(),
+            destinationCoordinator: demoTableViewCoordinator
         ))
     }
 
@@ -56,6 +59,13 @@ extension MainMenuCoordinator {
         controller.menus.append(MenuItemViewModel(
             title: R.string.localizable.menuTitleCollectionView(),
             destinationCoordinator: demoCollectionCoordinator
+        ))
+    }
+
+    private func registerDemoCameraCoordinator() {
+        controller.menus.append(MenuItemViewModel(
+            title: R.string.localizable.menuTitleCameraViewController(),
+            destinationCoordinator: nil //#todo
         ))
     }
 

@@ -32,6 +32,7 @@ public struct CoreStyle {
         public static var imageBackground: UIColor = .gray
         public static var inputAccessoryActive: UIColor = .clear
         public static var inputAccessoryInactive: UIColor = .clear
+        public static var refreshControlTintColor: UIColor = .white
     }
     public struct EmptySection {
         public static var xxSmall: CGFloat = CGFloat(4)
