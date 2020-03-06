@@ -149,6 +149,11 @@ open class TableView: View {
         sections.removeAll()
     }
 
+    public func removeSection(at index: Int, with animation: UITableView.RowAnimation) {
+        sections.remove(at: index)
+        tableView.deleteSections([index], with: animation)
+    }
+
     public func removeAllSectionForLoadingPurpose() {
         if sections.isEmpty { return }
         var placeholderSections = [TableViewSection]()

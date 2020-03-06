@@ -205,4 +205,16 @@ open class ViewController: UIViewController {
     open func configureBackgroundColor(_ color: UIColor? = nil) {
         view.backgroundColor = color == nil ? backgroundColor : color
     }
+
+    open func hideBackButton() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationItem.leftBarButtonItems = nil
+        navigationItem.setHidesBackButton(true, animated: false)
+    }
+
+    open func showBackButton() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.leftBarButtonItems = leftBarButtonItems()
+    }
 }
