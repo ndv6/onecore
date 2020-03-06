@@ -9,14 +9,16 @@ import UIKit
 
 open class CheckboxView: UIView {
     private var text: String = DefaultValue.emptyString
+    private var highlightedText: String = DefaultValue.emptyString
     private var style: CheckboxStyle = DefaultCheckboxStyle()
     private var value: Bool = false
     private var checkboxImageView: UIImageView = UIImageView()
     private var checkboxButton: Button = Button()
-    private var textLabel: UILabel = UILabel()
+    private var textLabel: Label = Label()
     private var isEnabled: Bool = true
     open var key: String = DefaultValue.emptyString
     open var didChangeAction: InputDidChangeHandler?
+    open var didTappedHighlightedText: PressButtonHandler?
     open var didValidationErrorAction: InputDidValidationError?
     open var didValidationSuccessAction: InputDidValidationSuccess?
     open var name: String = DefaultValue.emptyString {
@@ -34,9 +36,44 @@ open class CheckboxView: UIView {
         backgroundColor = .clear
     }
 
-    private func setText(_ text: String) {
+    private func setText(_ text: String, highlightedText: String) {
         self.text = text
         self.textLabel.text = text
+        guard highlightedText != DefaultValue.emptyString else { return }
+        let range = (text as NSString).range(of: highlightedText)
+        let attribute = NSMutableAttributedString(string: text)
+        attribute.addAttribute(
+            NSAttributedString.Key.foregroundColor,
+            value: style.highlightedTextColor ,
+            range: range
+        )
+        attribute.addAttribute(
+            NSAttributedString.Key.font,
+            value: style.highlightedFont ,
+            range: range
+        )
+        self.textLabel.attributedText = attribute
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(handleTappedHighlightedText)
+        )
+        textLabel.addGestureRecognizer(tap)
+        textLabel.isUserInteractionEnabled = true
+    }
+    
+    @objc func handleTappedHighlightedText(gesture: UITapGestureRecognizer) {
+        let highlightRange = (text as NSString).range(of: highlightedText)
+        let index = textLabel.indexOfAttributedTextCharacterAtPoint(
+            point: gesture.location(in: textLabel)
+        )
+        if checkRange(highlightRange, contain: index) == true {
+            didTappedHighlightedText?()
+            return
+        }
+    }
+    
+    func checkRange(_ range: NSRange, contain index: Int) -> Bool {
+        return index > range.location && index < range.location + range.length
     }
 
     private func renderCheckboxImageView() {
@@ -63,7 +100,7 @@ open class CheckboxView: UIView {
     }
 
     private func renderText() {
-        textLabel = UILabel()
+        textLabel = Label()
         textLabel.font = style.font
         textLabel.textColor = style.textColor
         textLabel.textAlignment = .left
@@ -73,7 +110,7 @@ open class CheckboxView: UIView {
         addSubview(textLabel)
         createTextLabelHorizontalConstraint()
         createTextLabelVerticalConstraint()
-        setText(text)
+        setText(text, highlightedText: highlightedText)
     }
 
     private func renderCheckboxButton() {
@@ -95,6 +132,7 @@ open class CheckboxView: UIView {
 
     public func configure(
         text: String = DefaultValue.emptyString,
+        highlightedText: String = DefaultValue.emptyString,
         style: CheckboxStyle = DefaultCheckboxStyle(),
         isSelected: Bool = false,
         isEnabled: Bool = true
@@ -103,6 +141,7 @@ open class CheckboxView: UIView {
         self.style = style
         self.value = isSelected
         self.isEnabled = isEnabled
+        self.highlightedText = highlightedText
     }
 
     public func render() {
