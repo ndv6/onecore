@@ -190,7 +190,6 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         footerView.translatesAutoresizingMaskIntoConstraints = false
-        footerView.backgroundColor = .blue
         footerHeightConstraint = footerView.heightAnchor.constraint(
             equalToConstant: DefaultValue.emptyCGFloat
         )
