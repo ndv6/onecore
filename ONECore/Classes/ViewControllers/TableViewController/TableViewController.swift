@@ -11,8 +11,10 @@ import UIKit
 open class TableViewController: ViewController, TableViewContainerProtocol {
     private var infiniteScroll: InfiniteScroll = InfiniteScroll()
     private var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
+    private var footerHeightConstraint: NSLayoutConstraint = NSLayoutConstraint()
     open var sectionCollection: SectionCollection = SectionCollection()
     open var headerView: UIView = UIView()
+    open var footerView: UIView = UIView()
     open var contentView: TableView!
     open var pagination: Pagination = Pagination()
     lazy private var refreshControl: UIRefreshControl = {
@@ -34,6 +36,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
     override open func viewDidLoad() {
         super.viewDidLoad()
         createHeaderView()
+        createFooterView()
         createContentView()
         setupConstraint()
     }
@@ -83,6 +86,12 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         headerView = UIView()
         headerView.backgroundColor = .clear
         view.addSubview(headerView)
+    }
+
+    open func createFooterView() {
+        footerView = UIView()
+        footerView.backgroundColor = .clear
+        view.addSubview(footerView)
     }
 
     open func createContentView() {
@@ -163,11 +172,28 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         ])
     }
 
+    open func setFooterView(_ view: UIView) {
+        footerView.addSubview(view)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: footerView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: footerView.trailingAnchor),
+            view.topAnchor.constraint(equalTo: footerView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: footerView.bottomAnchor)
+        ])
+        footerHeightConstraint.isActive = false
+    }
+
     open func setupConstraint(inset: UIEdgeInsets = UIEdgeInsets.zero) {
         if contentView == nil { return }
         NSLayoutConstraint.deactivate(layoutConstraints)
         headerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        footerView.translatesAutoresizingMaskIntoConstraints = false
+        footerView.backgroundColor = .blue
+        footerHeightConstraint = footerView.heightAnchor.constraint(
+            equalToConstant: DefaultValue.emptyCGFloat
+        )
         layoutConstraints = [
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -184,10 +210,14 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
                 equalTo: headerView.bottomAnchor,
                 constant: inset.top
             ),
-            contentView.bottomAnchor.constraint(
+            footerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            footerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            footerView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
+            footerView.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor,
-                constant: inset.bottom * -1
-            )
+                constant: inset.bottom
+            ),
+            footerHeightConstraint
         ]
         NSLayoutConstraint.activate(layoutConstraints)
     }
