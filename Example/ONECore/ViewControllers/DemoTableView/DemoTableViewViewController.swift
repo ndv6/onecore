@@ -17,9 +17,10 @@ class DemoTableViewViewController: TableViewController {
         guard let cell: TextFieldCell = contentView.dequeueReusableNibCell(
             nibClass: TextFieldCell.self
         ) as? TextFieldCell else { return }
-        cell.setTitle("Pencarian")
-        cell.setPlaceholder("Ketik kata pencarian")
-        contentView.appendSection(TableViewSection(cell))
+        cell.setTitle(DefaultValue.emptyString)
+        cell.setPlaceholder(R.string.localizable.searchFavMenu())
+        cell.setPaddingTop(SpaceSize.xxxSmall)
+        setHeaderView(cell.container)
     }
 
     override func render() {

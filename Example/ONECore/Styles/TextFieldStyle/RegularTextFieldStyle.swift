@@ -10,7 +10,7 @@ import UIKit
 import ONECore
 
 class RegularTextFieldStyle: TextFieldStyle {
-    var font = UIFont.systemFont(ofSize: FontSize.paragraph2, weight: .regular)
+    var font = UIFont.systemFont(ofSize: FontSize.paragraph1, weight: .regular)
     var color = Colors.primary
     var placeholderColor = Colors.gray
     var backgroundColor = Colors.white

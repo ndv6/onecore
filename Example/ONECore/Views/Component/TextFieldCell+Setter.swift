@@ -10,11 +10,11 @@ import ONECore
 
 extension TextFieldCell {
     func setPaddingTop(_ margin: CGFloat) {
-        containerTop.constant = margin
+        paddingTop.constant = margin
     }
 
     func setPaddingBottom(_ margin: CGFloat) {
-        containerBottom.constant = margin
+        paddingBottom.constant = margin
     }
 
     func setMarginLeft(_ margin: CGFloat) {
@@ -37,7 +37,7 @@ extension TextFieldCell {
         titleLabel.attributedText = attribute
         textField.name = title
         setAccessibilityIdentifier(title)
-        constraintContainerTop.constant = title.isEmpty
+        paddingTop.constant = title.isEmpty
             ? DefaultValue.emptyCGFloat
             : SpaceSize.mediumSmall
     }
@@ -105,26 +105,6 @@ extension TextFieldCell {
 
     func removeRightIcon() {
         textField.removeRightButton()
-    }
-
-    func setMicroButton(
-        title: String,
-        isEnabled: Bool = true,
-        style: ButtonStyle = PrimaryButtonStyle(),
-        action: @escaping PressButtonHandler = {}
-    ) {
-        microButton.setTitle(title, for: .normal)
-        microButton.didPressAction = action
-        microButton.isHidden = false
-        setMicroButton(isEnabled: isEnabled)
-    }
-
-    func setMicroButton(isEnabled: Bool) {
-        microButton.isEnabled = isEnabled
-    }
-
-    func setMicroButton(isHidden: Bool) {
-        microButton.isHidden = isHidden
     }
 
     func setAlwaysCapital(_ isAlwaysCapital: Bool = true) {

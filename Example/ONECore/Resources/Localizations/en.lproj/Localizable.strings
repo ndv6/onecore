@@ -24,3 +24,6 @@
 "menu-title-collection-view" = "CollectionView";
 "menu-title-table-view" = "TableView";
 "menu-title-pin-input-view" = "PinInputView (TBC)";
+
+// Field Title
+"search-fav-menu" = "Cari makanan favorit kamu";
