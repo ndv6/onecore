@@ -11,7 +11,7 @@ import UIKit
 open class TableViewController: ViewController, TableViewContainerProtocol {
     private var infiniteScroll: InfiniteScroll = InfiniteScroll()
     private var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
-    private var footerHeightConstraint: NSLayoutConstraint = NSLayoutConstraint()
+    private var footerViewHeightConstraint: NSLayoutConstraint = NSLayoutConstraint()
     open var sectionCollection: SectionCollection = SectionCollection()
     open var headerView: UIView = UIView()
     open var footerView: UIView = UIView()
@@ -181,7 +181,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
             view.topAnchor.constraint(equalTo: footerView.topAnchor),
             view.bottomAnchor.constraint(equalTo: footerView.bottomAnchor)
         ])
-        footerHeightConstraint.isActive = false
+        footerViewHeightConstraint.isActive = false
     }
 
     open func setupConstraint(inset: UIEdgeInsets = UIEdgeInsets.zero) {
@@ -190,7 +190,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         headerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         footerView.translatesAutoresizingMaskIntoConstraints = false
-        footerHeightConstraint = footerView.heightAnchor.constraint(
+        footerViewHeightConstraint = footerView.heightAnchor.constraint(
             equalToConstant: DefaultValue.emptyCGFloat
         )
         layoutConstraints = [
@@ -214,9 +214,9 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
             footerView.topAnchor.constraint(equalTo: contentView.bottomAnchor),
             footerView.bottomAnchor.constraint(
                 equalTo: view.bottomAnchor,
-                constant: inset.bottom
+                constant: inset.bottom * -1
             ),
-            footerHeightConstraint
+            footerViewHeightConstraint
         ]
         NSLayoutConstraint.activate(layoutConstraints)
     }
