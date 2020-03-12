@@ -23,7 +23,9 @@ public protocol CheckboxStyle {
     var interactionArea: CheckboxInteractionArea { get }
     var spacing: CGFloat { get }
     var font: UIFont { get }
+    var highlightedFont: UIFont { get }
     var textColor: UIColor { get }
+    var highlightedTextColor: UIColor { get }
     var disabledColor: UIColor { get }
     var checkedImage: UIImage { get }
     var uncheckedImage: UIImage { get }

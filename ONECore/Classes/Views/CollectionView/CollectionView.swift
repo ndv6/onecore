@@ -20,6 +20,7 @@ open class CollectionView: View {
     private var activityIndicator = UIActivityIndicatorView()
     public weak var delegate: CollectionViewDelegate?
     public var collectionView: UICollectionView!
+    public var pageControl: UIPageControl?
 
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -80,6 +81,11 @@ open class CollectionView: View {
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.contentInset = UIEdgeInsets.zero
+    }
+    
+    func renderPageControl() {
+        guard let pageControl = pageControl else { return }
+        pageControl.hidesForSinglePage = true
     }
 
     public func setLayout(
@@ -198,6 +204,7 @@ open class CollectionView: View {
 
     public func render() {
         removeAllSection()
+        renderPageControl()
     }
 }
 
@@ -211,7 +218,9 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
         numberOfItemsInSection section: Int
     ) -> Int {
         if hasSectionAtIndex(index: section) {
-            return sections[section].numberOfItems()
+            let rows = sections[section].numberOfItems()
+            pageControl?.numberOfPages = rows
+            return rows
         }
         return 0
     }
@@ -226,6 +235,10 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = collectionView.cellForItem(at: indexPath) as? CollectionViewCell else { return }
         item.onSelected()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl?.currentPage = indexPath.row
     }
 }
 
