@@ -20,4 +20,5 @@ public struct DateFormat {
     public static let time = "HH:mm"
     public static let dBDate = "yyyy-MM-dd"
     public static let dateTime = "yyyy-MM-dd HH:mm:ss"
+    public static let dayTime = "dd MMMM YYYY HH:mm"
 }

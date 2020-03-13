@@ -55,6 +55,10 @@ class DateExtensionTest: XCTestCase {
         XCTAssertEqual(date.formatInDBDate(), "2020-12-31")
     }
 
+    func testFormatInDayTime() {
+        XCTAssertEqual(date.formatInDayTime(), "31 Desember 2021 07:00")
+    }
+
     func testFormatIn() {
         XCTAssertEqual(date.formatIn(format: "dd MMM yyyy", locale: locale), "31 Dec 2020")
         XCTAssertEqual(date.formatIn(format: "dd MMM yyyy"), "31 Des 2020")
@@ -126,19 +130,19 @@ class DateExtensionTest: XCTestCase {
         let startDate = dateFormatter.date(from: "2020-08-20T00:00:00+0000")!
         XCTAssertEqual(
             startDate.displayRange(until: dateFormatter.date(from: "2020-10-21T00:00:00+0000")!),
-            "20 Agt - 21 Okt 2020"
+            "20 Agu - 21 Okt 2020"
         )
         XCTAssertEqual(
             startDate.displayRange(until: dateFormatter.date(from: "2021-10-21T00:00:00+0000")!),
-            "20 Agt 2020 - 21 Okt 2021"
+            "20 Agu 2020 - 21 Okt 2021"
         )
         XCTAssertEqual(
             startDate.displayRange(until: dateFormatter.date(from: "2020-08-10T00:00:00+0000")!),
-            "10 Agt - 20 Agt 2020"
+            "10 Agu - 20 Agu 2020"
         )
         XCTAssertEqual(
             startDate.displayRange(until: dateFormatter.date(from: "2019-03-16T00:00:00+0000")!),
-            "16 Mar 2019 - 20 Agt 2020"
+            "16 Mar 2019 - 20 Agu 2020"
         )
     }
 
