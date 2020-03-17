@@ -22,4 +22,5 @@ public struct DefaultValue {
     public static let emptyIndex = -1
     public static let emptyCGFloat = CGFloat(0.0)
     public static let emptyAny = DefaultValue.emptyString as Any
+    public static let emptyNSAttributeString = NSAttributedString(string: "")
 }
