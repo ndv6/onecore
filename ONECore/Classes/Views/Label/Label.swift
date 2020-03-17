@@ -20,7 +20,7 @@ open class Label: UILabel {
         textColor = style.textColor
         textAlignment = style.alignment
     }
-    
+ 
     func indexOfAttributedTextCharacterAtPoint(point: CGPoint) -> Int {
         let textStorage = NSTextStorage(
             attributedString: self.attributedText ?? DefaultValue.emptyNSAttributeString

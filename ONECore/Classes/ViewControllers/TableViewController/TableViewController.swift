@@ -87,7 +87,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         headerView.backgroundColor = .clear
         view.addSubview(headerView)
     }
-
+ 
     open func createFooterView() {
         footerView = UIView()
         footerView.backgroundColor = .clear
