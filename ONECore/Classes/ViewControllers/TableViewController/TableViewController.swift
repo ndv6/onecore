@@ -32,6 +32,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
     open var tableViewBackgroundColor: UIColor { return CoreStyle.Color.primaryBackground }
     open var tableViewInset: UIEdgeInsets { return UIEdgeInsets.zero }
     open func registerNibs() {}
+    open func setupViewModel() {}
 
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
 
     open func render() {
         if contentView == nil { return }
+        setupViewModel()
         contentView.removeAllSection()
         sectionCollection.configure(contentView: contentView)
     }
