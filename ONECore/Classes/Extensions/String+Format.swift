@@ -112,4 +112,17 @@ extension String {
         let filteredCharacters = components(separatedBy: rejectedCharacters)
         return filteredCharacters.joined(separator: DefaultValue.emptyString)
     }
+
+    public func appendLeading(
+        withCharacter character: Character,
+        targetLength: Int
+    ) -> String {
+        var prefix = DefaultValue.emptyString
+        var prefixLength = targetLength - count
+        while prefixLength > 0 {
+            prefix += String(character)
+            prefixLength -= 1
+        }
+        return prefix + self
+    }
 }

@@ -20,7 +20,7 @@ open class Label: UILabel {
         textColor = style.textColor
         textAlignment = style.alignment
     }
- 
+
     func indexOfAttributedTextCharacterAtPoint(point: CGPoint) -> Int {
         let textStorage = NSTextStorage(
             attributedString: self.attributedText ?? DefaultValue.emptyNSAttributeString
@@ -32,8 +32,11 @@ open class Label: UILabel {
         textContainer.maximumNumberOfLines = self.numberOfLines
         textContainer.lineBreakMode = self.lineBreakMode
         layoutManager.addTextContainer(textContainer)
-
-        let index = layoutManager.characterIndex(for: point, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        let index = layoutManager.characterIndex(
+            for: point,
+            in: textContainer,
+            fractionOfDistanceBetweenInsertionPoints: nil
+        )
         return index
     }
 

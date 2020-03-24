@@ -60,7 +60,7 @@ open class CheckboxView: UIView {
         textLabel.addGestureRecognizer(tap)
         textLabel.isUserInteractionEnabled = true
     }
-    
+
     @objc func handleTappedHighlightedText(gesture: UITapGestureRecognizer) {
         let highlightRange = (text as NSString).range(of: highlightedText)
         let index = textLabel.indexOfAttributedTextCharacterAtPoint(
@@ -71,7 +71,7 @@ open class CheckboxView: UIView {
             return
         }
     }
-    
+
     func checkRange(_ range: NSRange, contain index: Int) -> Bool {
         return index > range.location && index < range.location + range.length
     }
