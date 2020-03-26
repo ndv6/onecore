@@ -236,10 +236,6 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let item = collectionView.cellForItem(at: indexPath) as? CollectionViewCell else { return }
         item.onSelected()
     }
-    
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl?.currentPage = indexPath.row
-    }
 }
 
 extension CollectionView: UIScrollViewDelegate {
@@ -252,6 +248,10 @@ extension CollectionView: UIScrollViewDelegate {
     }
 
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        for cell in collectionView.visibleCells {
+            guard let row = collectionView.indexPath(for: cell)?.item else { return }
+            self.pageControl?.currentPage = row
+        }
         delegate?.collectionViewDidEndDecelerating?(scrollView)
     }
 }
