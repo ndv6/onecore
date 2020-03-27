@@ -88,4 +88,13 @@ class StringFormatTest: XCTestCase {
     func testFilterAllowedCharacters() {
         XCTAssertEqual("=-\"$-a08kbc91p{2lk 3".filterAllowedCharacters("$abc123"), "$abc123")
     }
+
+    func testAppendLeading() {
+        XCTAssertEqual("123".appendLeading(withCharacter: "0", targetLength: 5), "00123")
+        XCTAssertEqual("12345".appendLeading(withCharacter: "0", targetLength: 5), "12345")
+        XCTAssertEqual("123456".appendLeading(withCharacter: "0", targetLength: 5), "123456")
+        XCTAssertEqual("".appendLeading(withCharacter: "0", targetLength: 5), "00000")
+        XCTAssertEqual("123".appendLeading(withCharacter: "0", targetLength: 0), "123")
+        XCTAssertEqual("123".appendLeading(withCharacter: "0", targetLength: -5), "123")
+    }
 }
