@@ -250,7 +250,7 @@ extension CollectionView: UIScrollViewDelegate {
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         for cell in collectionView.visibleCells {
             guard let row = collectionView.indexPath(for: cell)?.item else { return }
-            self.pageControl?.currentPage = row
+            pageControl?.currentPage = row
         }
         delegate?.collectionViewDidEndDecelerating?(scrollView)
     }
