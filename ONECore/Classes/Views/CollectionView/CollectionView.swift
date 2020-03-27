@@ -82,7 +82,7 @@ open class CollectionView: View {
         collectionView.backgroundColor = .clear
         collectionView.contentInset = UIEdgeInsets.zero
     }
-    
+
     func renderPageControl() {
         guard let pageControl = pageControl else { return }
         pageControl.hidesForSinglePage = true
