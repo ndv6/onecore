@@ -11,6 +11,7 @@ import Foundation
 public struct DateFormat {
     public static let date = "dd MMM yyyy"
     public static let month = "LLL"
+    public static let year = "yyyy"
     public static let dayWithMonth = "dd MMM"
     public static let monthWithYear = "MMMM yyyy"
     public static let day = "d"
@@ -19,6 +20,7 @@ public struct DateFormat {
     public static let periodDB = "yyyy-MM"
     public static let time = "HH:mm"
     public static let dBDate = "yyyy-MM-dd"
+    public static let dbDateTime = "yyyy-MM-dd'T'HH:mm:ssZ"
     public static let dateTime = "yyyy-MM-dd HH:mm:ss"
     public static let dayTime = "dd MMMM YYYY HH:mm"
 }
