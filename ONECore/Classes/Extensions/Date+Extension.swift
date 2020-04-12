@@ -49,6 +49,10 @@ extension Date {
         return formatIn(format: DateFormat.dBDate, locale: locale)
     }
 
+    public func formatInShortDate(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.shortDate, locale: locale)
+    }
+
     public func formatInTime(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.time, locale: locale)
     }

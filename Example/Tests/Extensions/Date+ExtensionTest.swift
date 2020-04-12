@@ -59,6 +59,10 @@ class DateExtensionTest: XCTestCase {
         XCTAssertEqual(date.formatInDayTime(), "31 Desember 2021 07:00")
     }
 
+    func testFormatInShortDate() {
+        XCTAssertEqual(date.formatInShortDate(), "31/12/2020")
+    }
+
     func testFormatIn() {
         XCTAssertEqual(date.formatIn(format: "dd MMM yyyy", locale: locale), "31 Dec 2020")
         XCTAssertEqual(date.formatIn(format: "dd MMM yyyy"), "31 Des 2020")

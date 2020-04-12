@@ -35,4 +35,8 @@ extension String {
     public func formatInPeriodDBToDate() -> Date {
         return self.toDate(format: DateFormat.periodDB)
     }
+
+    public func formatInShortDate() -> Date {
+           return self.toDate(format: DateFormat.shortDate)
+       }
 }
