@@ -37,6 +37,6 @@ extension String {
     }
 
     public func formatInShortDate() -> Date {
-           return self.toDate(format: DateFormat.shortDate)
-       }
+        return self.toDate(format: DateFormat.shortDate)
+    }
 }
