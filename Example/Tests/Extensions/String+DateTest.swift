@@ -41,4 +41,9 @@ class StringDateTest: XCTestCase {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         XCTAssertEqual("2020-12".formatInPeriodDBToDate(), dateFormatter.date(from: "2020-12-01")!)
     }
+
+    func testFormatInShortDate() {
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        XCTAssertEqual("31-12-2020".formatInShortDate(), dateFormatter.date(from: "31/12/2020")!)
+    }
 }

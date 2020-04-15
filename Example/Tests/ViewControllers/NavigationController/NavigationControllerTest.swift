@@ -37,6 +37,8 @@ class NavigationControllerTest: XCTestCase {
         XCTAssertTrue(mockNavigationController.gestureRecognizerShouldBegin(UIGestureRecognizer()))
         let viewControllersCount = mockNavigationController.viewControllers.count
         mockNavigationController.removePreviousController()
-        XCTAssertEqual(mockNavigationController.viewControllers.count, viewControllersCount - 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+            XCTAssertEqual(self.mockNavigationController.viewControllers.count, viewControllersCount - 1)
+        })
     }
 }

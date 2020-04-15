@@ -17,6 +17,10 @@ extension Date {
         return formatIn(format: DateFormat.month, locale: locale)
     }
 
+    public func formatInYear(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.year, locale: locale)
+    }
+
     public func formatInFullDate(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.date, locale: locale)
     }
@@ -45,12 +49,20 @@ extension Date {
         return formatIn(format: DateFormat.dBDate, locale: locale)
     }
 
+    public func formatInShortDate(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.shortDate, locale: locale)
+    }
+
     public func formatInTime(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.time, locale: locale)
     }
 
     public func formatInDayTime(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.dayTime, locale: locale)
+    }
+
+    public func formatInDayMonthTime(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.dayMonthTime, locale: locale)
     }
 
     public func formatIn(format: String, locale: Locale? = nil) -> String {
