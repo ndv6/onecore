@@ -112,7 +112,7 @@ open class Button: UIButton {
     }
 
     public func setUnderline() {
-        let title = self.titleLabel?.text ?? DefaultValue.emptyString
+        let title = self.title(for: .normal) ?? DefaultValue.emptyString
         let attributedString = NSMutableAttributedString(
             string: (title))
         attributedString.addAttribute(
