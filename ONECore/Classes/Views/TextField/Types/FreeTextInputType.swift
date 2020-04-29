@@ -28,6 +28,10 @@ open class FreeTextInputType: InputType {
         return textField.getText() as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     public func getDisplayText() -> String {
         return textField.getText()
     }

@@ -43,6 +43,10 @@ open class AmountInputType: InputType {
         return (Int(text.digits) ?? 0) as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         if let amount = getValue() as? Double {
             return amount.toCurrencyIDR()

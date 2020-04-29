@@ -234,7 +234,10 @@ extension TextField: InputProtocol {
     }
 
     open func getText() -> String {
-        return text ?? DefaultValue.emptyString
+        guard let inputType = inputType else {
+            return text ?? DefaultValue.emptyString
+        }
+        return inputType.getOriginalText()
     }
 
     open func resetValue() {

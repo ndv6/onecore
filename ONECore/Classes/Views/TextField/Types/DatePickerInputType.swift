@@ -171,6 +171,10 @@ open class DatePickerInputType: InputType {
         textField.didChange(textField: textField, newValue: value)
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         return textField.getText()
     }

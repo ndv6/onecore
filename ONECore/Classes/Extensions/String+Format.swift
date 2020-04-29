@@ -77,6 +77,11 @@ extension String {
         return String(self.filter { !" \n\t\r".contains($0) })
     }
 
+    public func removePrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
+
     public func getSuffix(_ maxLength: Int) -> String {
         var length = maxLength
         if self.count < maxLength {

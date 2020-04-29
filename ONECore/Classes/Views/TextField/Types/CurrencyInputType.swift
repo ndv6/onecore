@@ -32,6 +32,10 @@ open class CurrencyInputType: InputType {
         return (Double(text.digits) ?? 0) as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text?.removePrefix(prefix) ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         return getDisplayText(originalText: textField.getText())
     }

@@ -133,6 +133,10 @@ open class PickerInputType: InputType {
         return value as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         return textField.getText()
     }

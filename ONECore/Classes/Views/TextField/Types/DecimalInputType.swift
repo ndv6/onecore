@@ -44,6 +44,10 @@ open class DecimalInputType: InputType {
         return text.floatValue as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         return textField.getText()
     }
