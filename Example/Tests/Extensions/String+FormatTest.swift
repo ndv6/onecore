@@ -53,6 +53,13 @@ class StringFormatTest: XCTestCase {
         XCTAssertEqual("  a  bc\n\t\rd \ne\nf\ng\th\ri".removeAllWhitespaces(), "abcdefghi")
     }
 
+    func testRemovePrefix() {
+        XCTAssertEqual("Rp1.200.000".removePrefix("Rp"), "1.200.000")
+        XCTAssertEqual("1.200.000".removePrefix("Rp"), "1.200.000")
+        XCTAssertEqual("Rp1.200.000".removePrefix(""), "Rp1.200.000")
+        XCTAssertEqual("$1.200.000".removePrefix("$"), "1.200.000")
+    }
+
     func  testGetSuffix() {
         XCTAssertEqual("081110000121".getSuffix(5), "00121")
         XCTAssertEqual("12".getSuffix(5), "12")

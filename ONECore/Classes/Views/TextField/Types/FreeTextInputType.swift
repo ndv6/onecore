@@ -9,13 +9,16 @@
 import UIKit
 
 open class FreeTextInputType: InputType {
-    public var identifier: InputTypeIdentifier = .freetext
     private var textField: TextField = TextField()
+    open var identifier: InputTypeIdentifier = .freetext
     public func render() {}
     public func didBeginEditingHandler(_ textField: TextField) {}
     public func didEndEditingHandler(_ textField: TextField) {}
     public func didChangeHandler(_ textField: TextField) {}
     public func resetValue() {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(textField: TextField) {
         self.textField = textField
@@ -23,6 +26,10 @@ open class FreeTextInputType: InputType {
 
     public func getValue() -> AnyObject {
         return textField.getText() as AnyObject
+    }
+
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
     }
 
     public func getDisplayText() -> String {
