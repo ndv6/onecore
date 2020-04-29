@@ -21,9 +21,7 @@ open class CurrencyInputType: InputType {
         self.textField.keyboardType = .numberPad
         self.prefix = prefix
         self.textField.text = getDisplayText(
-            originalText: defaultValue == nil
-                ? DefaultValue.emptyString
-                : String(defaultValue ?? DefaultValue.emptyDouble)
+            originalText: defaultValue?.clean ?? DefaultValue.emptyString
         )
     }
 
