@@ -28,7 +28,7 @@ open class CurrencyInputType: InputType {
     }
 
     open func getValue() -> AnyObject {
-        guard let text = textField.text else { return 0 as AnyObject }
+        guard let text = textField.text else { return DefaultValue.emptyDouble as AnyObject }
         return text.digits.doubleValue as AnyObject
     }
 
