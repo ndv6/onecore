@@ -39,11 +39,17 @@ open class CurrencyInputType: InputType {
     }
 
     open func shouldChangeCharactersIn(range: NSRange, replacementString string: String) -> Bool {
+        let currentTextLength = textField.text?.count ?? DefaultValue.emptyInt
         if range.location < prefix.count { return false }
         if range.location == prefix.count && string == String(DefaultValue.emptyInt) {
             return false
         }
         if textField.text == prefix && string == DefaultValue.emptyString {
+            return false
+        }
+        if range.location == currentTextLength - 1 && string.isBackspace() {
+            return true
+        } else if range.location < currentTextLength {
             return false
         }
         return true
