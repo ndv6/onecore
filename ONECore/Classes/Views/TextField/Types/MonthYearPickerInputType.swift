@@ -8,12 +8,12 @@
 import UIKit
 
 open class MonthYearPickerInputType {
-    open var identifier: InputTypeIdentifier = .monthYearpicker
     private var overlay: Button = Button()
     private var instruction: String = DefaultValue.emptyString
     private var textField: TextField = TextField()
     private var presenter: UINavigationController = UINavigationController()
     private var monthYearPicker = MonthYearPickerView()
+    open var identifier: InputTypeIdentifier = .monthYearpicker
     open var doneButtonText: String = DefaultValue.emptyString
     open var locale: Locale = Locale(identifier: DateLocale.indonesian) {
         didSet {
@@ -22,6 +22,9 @@ open class MonthYearPickerInputType {
     }
     public var style: DatePickerStyle = DefaultDatePickerStyle() {
         didSet { applyStyle() }
+    }
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
     }
 
     public init(

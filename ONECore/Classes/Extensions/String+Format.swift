@@ -41,6 +41,10 @@ extension String {
         return DefaultValue.emptyFloat
     }
 
+    public var integerValue: Int {
+        return Int(self.digits) ?? DefaultValue.emptyInt
+    }
+
     public var digits: String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()

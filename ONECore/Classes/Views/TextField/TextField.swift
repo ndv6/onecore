@@ -213,6 +213,11 @@ open class TextField: UITextField {
         super.draw(rect)
         renderBorder()
     }
+
+    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if !inputType.canPerformAction(action, withSender: sender) { return false }
+        return super.canPerformAction(action, withSender: sender)
+    }
 }
 
 extension TextField: InputProtocol {
