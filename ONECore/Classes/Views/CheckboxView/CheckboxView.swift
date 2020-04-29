@@ -80,6 +80,7 @@ open class CheckboxView: UIView {
         checkboxImageView = UIImageView()
         checkboxImageView.translatesAutoresizingMaskIntoConstraints = false
         checkboxImageView.isUserInteractionEnabled = true
+        checkboxImageView.contentMode = .scaleAspectFit
         addSubview(checkboxImageView)
         createCheckboxImageViewSizeConstraint()
         createCheckboxImageViewOriginConstraint()
