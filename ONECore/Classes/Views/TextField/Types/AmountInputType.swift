@@ -15,6 +15,9 @@ open class AmountInputType: InputType {
     open func didBeginEditingHandler(_ textField: TextField) {}
     open func didEndEditingHandler(_ textField: TextField) {}
     open func resetValue() {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(textField: TextField, defaultValue: Int? = nil) {
         self.textField = textField

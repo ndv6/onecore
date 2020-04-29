@@ -19,6 +19,9 @@ open class DropDownInputType: InputType {
     open var arrowStyle: ButtonStyle = DefaultButtonStyle()
     open func didEndEditingHandler(_ textField: TextField) {}
     open func didChangeHandler(_ textField: TextField) {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(
         textField: TextField,
