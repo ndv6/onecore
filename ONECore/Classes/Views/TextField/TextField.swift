@@ -215,6 +215,9 @@ open class TextField: UITextField {
     }
 
     override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        guard let inputType = inputType else {
+            return super.canPerformAction(action, withSender: sender)
+        }
         if !inputType.canPerformAction(action, withSender: sender) { return false }
         return super.canPerformAction(action, withSender: sender)
     }
