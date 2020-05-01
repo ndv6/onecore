@@ -13,6 +13,7 @@ open class View: UIView {
     private var gradientLayer: CAGradientLayer = CAGradientLayer()
     private var shadowLayer: CAShapeLayer = CAShapeLayer()
     private var shadowLayerCornerRadius: CGFloat = 0
+    private let gradientLayerIdentifier = "GradientLayerIdentifier"
 
     public func resetParentConstraint(parentView: UIView) {
         if parentConstraint != nil {
@@ -51,12 +52,17 @@ open class View: UIView {
         for color in colors { cgColors.append(color.cgColor) }
         backgroundColor = UIColor.clear
         gradientLayer = CAGradientLayer()
+        gradientLayer.name = gradientLayerIdentifier
         gradientLayer.frame = bounds
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         gradientLayer.colors = cgColors
         if gradientLayer.superlayer == nil { layer.insertSublayer(gradientLayer, at: 0) }
         if shadowLayer.superlayer != nil { shadowLayer.removeFromSuperlayer() }
+    }
+    
+    public func removeGradientColors() {
+        layer.sublayers?.removeAll(where: {$0.name == gradientLayerIdentifier})
     }
 
     public func setDropShadow(
