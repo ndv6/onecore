@@ -40,6 +40,7 @@ open class CurrencyInputType: InputType {
 
     open func shouldChangeCharactersIn(range: NSRange, replacementString string: String) -> Bool {
         let currentTextLength = textField.text?.count ?? DefaultValue.emptyInt
+        if currentTextLength == DefaultValue.emptyInt { return true }
         if range.location < prefix.count { return false }
         if range.location == prefix.count && string == String(DefaultValue.emptyInt) {
             return false
@@ -64,6 +65,9 @@ open class CurrencyInputType: InputType {
     }
 
     private func getDisplayText(originalText: String) -> String {
+        if originalText.isEmpty {
+            return DefaultValue.emptyString
+        }
         return String(format: "%@%@", prefix, originalText.withThousandSeparator())
     }
 }
