@@ -8,14 +8,17 @@
 import UIKit
 
 open class DecimalInputType: InputType {
-    public var identifier: InputTypeIdentifier = .freetext
     private var textField: TextField = TextField()
     private var activeIcon: UIImage?
     private var inactiveIcon: UIImage?
+    open var identifier: InputTypeIdentifier = .freetext
     public func didBeginEditingHandler(_ textField: TextField) {}
     public func didEndEditingHandler(_ textField: TextField) {}
     public func didChangeHandler(_ textField: TextField) {}
     public func resetValue() {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(
         textField: TextField,
@@ -41,11 +44,16 @@ open class DecimalInputType: InputType {
         return text.floatValue as AnyObject
     }
 
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
+    }
+
     open func getDisplayText() -> String {
         return textField.getText()
     }
 
     open func shouldChangeCharactersIn(range: NSRange, replacementString string: String) -> Bool {
+        if string.isBackspace() { return true }
         guard let text = textField.text else { return true }
         if !string.contains(Separator.decimalID) && !string.contains(Separator.decimalEN) { return true }
         if text.isEmpty { return false }

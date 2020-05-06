@@ -48,7 +48,6 @@ extension FormTableViewController: UITextFieldDelegate {
         let isValidLength = txtField.maxLength == 0
             || initialText.count + string.count - range.length <= txtField.maxLength
         var result = isValidLength && txtField.shouldChangeCharactersIn(range: range, replacementString: string)
-        if !result && string.isBackspace() { return true }
         if !result { return false }
         let replacementString = composeReplacementStringFrom(string, textfield: txtField)
         result = !isNeedToOverrideText(textfield: txtField)

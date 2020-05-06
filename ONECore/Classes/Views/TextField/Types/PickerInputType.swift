@@ -9,11 +9,11 @@
 import UIKit
 
 open class PickerInputType: InputType {
-    open var identifier: InputTypeIdentifier = .picker
     private var overlay: Button = Button()
     private var instruction: String = DefaultValue.emptyString
     private var textField: TextField = TextField()
     private var sender: FormTableViewController = FormTableViewController()
+    open var identifier: InputTypeIdentifier = .picker
     open var pickerView = UIPickerView()
     open var items = [String]()
     open var instructionFont: UIFont = UIFont()
@@ -27,6 +27,9 @@ open class PickerInputType: InputType {
     open func didEndEditingHandler(_ textField: TextField) {}
     open func didChangeHandler(_ textField: TextField) {}
     open func resetValue() {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(
         textField: TextField,
@@ -128,6 +131,10 @@ open class PickerInputType: InputType {
         let row = pickerView.selectedRow(inComponent: 0)
         let value = String(items[row])
         return value as AnyObject
+    }
+
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
     }
 
     open func getDisplayText() -> String {

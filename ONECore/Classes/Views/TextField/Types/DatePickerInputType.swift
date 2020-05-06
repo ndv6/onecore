@@ -9,12 +9,12 @@
 import UIKit
 
 open class DatePickerInputType: InputType {
-    open var identifier: InputTypeIdentifier = .datepicker
     private var overlay: Button = Button()
     private var instruction: String = DefaultValue.emptyString
     private var textField: TextField = TextField()
     private var presenter: UINavigationController = UINavigationController()
     private var datePicker = UIDatePicker()
+    open var identifier: InputTypeIdentifier = .datepicker
     open var doneButtonText: String = DefaultValue.emptyString
     open var locale: Locale = Locale(identifier: DateLocale.indonesian) {
         didSet {
@@ -27,6 +27,9 @@ open class DatePickerInputType: InputType {
 
     open func didChangeHandler(_ textField: TextField) {}
     open func resetValue() {}
+    open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return true
+    }
 
     public init(
         textField: TextField,
@@ -166,6 +169,10 @@ open class DatePickerInputType: InputType {
             locale: locale
         )
         textField.didChange(textField: textField, newValue: value)
+    }
+
+    open func getOriginalText() -> String {
+        return textField.text ?? DefaultValue.emptyString
     }
 
     open func getDisplayText() -> String {

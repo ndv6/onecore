@@ -213,6 +213,14 @@ open class TextField: UITextField {
         super.draw(rect)
         renderBorder()
     }
+
+    override open func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        guard let inputType = inputType else {
+            return super.canPerformAction(action, withSender: sender)
+        }
+        if !inputType.canPerformAction(action, withSender: sender) { return false }
+        return super.canPerformAction(action, withSender: sender)
+    }
 }
 
 extension TextField: InputProtocol {
@@ -226,7 +234,10 @@ extension TextField: InputProtocol {
     }
 
     open func getText() -> String {
-        return text ?? DefaultValue.emptyString
+        guard let inputType = inputType else {
+            return text ?? DefaultValue.emptyString
+        }
+        return inputType.getOriginalText()
     }
 
     open func resetValue() {
