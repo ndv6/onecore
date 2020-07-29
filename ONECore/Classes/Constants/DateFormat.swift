@@ -23,6 +23,7 @@ public struct DateFormat {
     public static let dbDateTime = "yyyy-MM-dd'T'HH:mm:ssZ"
     public static let dateTime = "yyyy-MM-dd HH:mm:ss"
     public static let dayTime = "dd MMMM YYYY HH:mm"
+    public static let dayAndTime = "dd MMMM YYYY, HH:mm"
     public static let dayMonthTime = "dd MMMM, HH:mm a"
     public static let shortDate = "dd/MM/yyyy"
 }

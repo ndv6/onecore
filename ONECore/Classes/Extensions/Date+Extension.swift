@@ -61,6 +61,10 @@ extension Date {
         return formatIn(format: DateFormat.dayTime, locale: locale)
     }
 
+    public func formatInDayAndTime(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.dayAndTime, locale: locale)
+    }
+
     public func formatInDayMonthTime(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.dayMonthTime, locale: locale)
     }
