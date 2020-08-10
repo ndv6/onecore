@@ -1,27 +1,26 @@
 //
-//  DatePickerInputType.swift
-//  ONECore
+//  TimePickerInputType.swift
+//  Alamofire
 //
-//  Created by DENZA on 23/11/18.
-//  Copyright © 2018 NDV6. All rights reserved.
+//  Created by ALDO LAZUARDI on 03/06/20.
 //
 
 import UIKit
 
-open class DatePickerInputType: InputType {
+open class TimePickerInputType: InputType {
     private var overlay: Button = Button()
     private var instruction: String = DefaultValue.emptyString
     private var textField: TextField = TextField()
     private var presenter: UINavigationController = UINavigationController()
     private var datePicker = UIDatePicker()
-    open var identifier: InputTypeIdentifier = .datepicker
+    open var identifier: InputTypeIdentifier = .timePicker
     open var doneButtonText: String = DefaultValue.emptyString
     open var locale: Locale = Locale(identifier: DateLocale.indonesian) {
         didSet {
             datePicker.locale = locale
         }
     }
-    public var style: DatePickerStyle = DefaultDatePickerStyle() {
+    public var style: DatePickerStyle = TimeDatePickerStyle() {
         didSet { applyStyle() }
     }
 
@@ -44,7 +43,7 @@ open class DatePickerInputType: InputType {
         datePicker.backgroundColor = .white
         datePicker.minimumDate = minimumDate
         datePicker.maximumDate = maximumDate
-        datePicker.datePickerMode = .date
+        datePicker.datePickerMode = .time
     }
 
     private func applyStyle() {
@@ -146,7 +145,6 @@ open class DatePickerInputType: InputType {
 
     open func render() {
         textField.inputView = datePicker
-        renderCalendarButton()
         createToolBar()
         createOverlay()
         renderBorder()

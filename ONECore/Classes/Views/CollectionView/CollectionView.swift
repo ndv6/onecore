@@ -236,10 +236,6 @@ extension CollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let item = collectionView.cellForItem(at: indexPath) as? CollectionViewCell else { return }
         item.onSelected()
     }
-    
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.pageControl?.currentPage = indexPath.row
-    }
 }
 
 extension CollectionView: UIScrollViewDelegate {
