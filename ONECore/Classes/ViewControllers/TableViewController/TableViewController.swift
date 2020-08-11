@@ -67,7 +67,9 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
             contentView.tableView.reloadData()
             return
         }
-        contentView.tableView.reloadDataWithoutScrollAnimation()
+        CoreConfig.TableViewController.isReloadDataWithoutScrollAnimation
+            ? contentView.tableView.reloadDataWithoutScrollAnimation()
+            : contentView.tableView.reloadData()
     }
 
     private func renderRefreshControl() {
