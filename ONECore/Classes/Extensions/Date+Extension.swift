@@ -75,7 +75,7 @@ extension Date {
 
     public func formatIn(format: String, locale: Locale? = nil) -> String {
         let formatter = DateFormatter()
-        formatter.locale = locale ?? Locale(identifier: Language.bahasa)
+        formatter.locale = locale ?? Locale(identifier: CoreConfig.Date.defaultLanguage)
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
