@@ -13,5 +13,6 @@ public struct CoreConfig {
     }
     public struct TableViewController {
         public static var isAutoRenderOnEveryViewWillAppear: Bool = false
+        public static var isReloadDataWithoutScrollAnimation: Bool = true
     }
 }
