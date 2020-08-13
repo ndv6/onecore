@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-open class ServiceSessionManager: SessionManager {
+open class ServiceSessionManager: Session {
     private func getEncoding(_ method: HTTPMethod) -> ParameterEncoding {
         switch method {
         case .get: return URLEncoding(destination: .queryString)

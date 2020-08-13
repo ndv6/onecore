@@ -60,7 +60,7 @@ open class View: UIView {
         if gradientLayer.superlayer == nil { layer.insertSublayer(gradientLayer, at: 0) }
         if shadowLayer.superlayer != nil { shadowLayer.removeFromSuperlayer() }
     }
-    
+
     public func removeGradientColors() {
         layer.sublayers?.removeAll(where: {$0.name == gradientLayerIdentifier})
     }
