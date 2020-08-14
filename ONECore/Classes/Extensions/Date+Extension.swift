@@ -57,8 +57,16 @@ extension Date {
         return formatIn(format: DateFormat.time, locale: locale)
     }
 
+    public func formatInTimePeriod(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.timePeriod, locale: locale)
+    }
+
     public func formatInDayTime(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.dayTime, locale: locale)
+    }
+
+    public func formatInDayAndTime(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.dayAndTime, locale: locale)
     }
 
     public func formatInDayMonthTime(locale: Locale? = nil) -> String {
@@ -67,7 +75,7 @@ extension Date {
 
     public func formatIn(format: String, locale: Locale? = nil) -> String {
         let formatter = DateFormatter()
-        formatter.locale = locale ?? Locale(identifier: Language.bahasa)
+        formatter.locale = locale ?? Locale(identifier: CoreConfig.Date.defaultLanguage)
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
@@ -182,12 +190,12 @@ extension Date {
         let startYear = calendar.component(.year, from: startDate)
         let endYear = calendar.component(.year, from: endDate)
         let fullFormat = DateFormatter()
-        fullFormat.locale = Locale(identifier: Language.bahasa)
+        fullFormat.locale = Locale(identifier: CoreConfig.Date.defaultLanguage)
         fullFormat.dateFormat = DateFormat.date
         var startDateText = fullFormat.string(from: startDate)
         if startYear == endYear {
             let periodFormat = DateFormatter()
-            periodFormat.locale = Locale(identifier: Language.bahasa)
+            periodFormat.locale = Locale(identifier: CoreConfig.Date.defaultLanguage)
             periodFormat.dateFormat = DateFormat.dayWithMonth
             startDateText = periodFormat.string(from: startDate)
         }

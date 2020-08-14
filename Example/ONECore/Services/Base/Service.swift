@@ -18,36 +18,37 @@ class Service {
         self.baseUrl = baseUrl
     }
 
-    private func isSuccess(response: DataResponse<Any>) -> Bool {
+    private func isSuccess(response: DataResponse<Any, AFError>) -> Bool {
         guard let statusCode = response.response?.statusCode else { return false }
         return statusCode >= 200 && statusCode < 300
     }
 
     private func responseHandler(
-        response: DataResponse<Any>,
+        response: DataResponse<Any, AFError>,
         success: @escaping NetworkHandler.Success,
         failed: @escaping NetworkHandler.Failed,
         completion: @escaping NetworkHandler.Completion = {}
     ) {
-        if let value = response.result.value {
+        switch  response.result {
+        case .success(let anyModel):
             if isSuccess(response: response) {
-                success(value)
+                success(anyModel)
                 completion()
                 return
-            } else if let data = Mapper<ErrorResponse>().map(JSONObject: value) {
+            } else if let data = Mapper<ErrorResponse>().map(JSONObject: response.result) {
                 failed(data)
                 completion()
                 return
             }
-        }
-        if response.result.error != nil, let response = response.response {
-            failed(ErrorResponse(code: String(response.statusCode)))
+        case .failure(_):
+            if let response = response.response {
+                failed(ErrorResponse(code: String(response.statusCode)))
+                completion()
+                return
+            }
+            failed(ErrorResponse(code: String(NSURLErrorUnknown)))
             completion()
-            return
         }
-        failed(ErrorResponse(code: String(NSURLErrorUnknown)))
-        completion()
-        return
     }
 
     public func request(

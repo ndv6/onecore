@@ -13,5 +13,9 @@ public struct CoreConfig {
     }
     public struct TableViewController {
         public static var isAutoRenderOnEveryViewWillAppear: Bool = false
+        public static var isReloadDataWithoutScrollAnimation: Bool = true
+    }
+    public struct Date {
+        public static var defaultLanguage: String = Language.bahasa
     }
 }

@@ -59,6 +59,10 @@ class DateExtensionTest: XCTestCase {
         XCTAssertEqual(date.formatInDayTime(), "31 Desember 2021 07:00")
     }
 
+    func testFormatInDayAndTime() {
+        XCTAssertEqual(date.formatInDayAndTime(), "31 Des 2020, 07:00 AM")
+    }
+
     func testFormatInShortDate() {
         XCTAssertEqual(date.formatInShortDate(), "31/12/2020")
     }
@@ -230,6 +234,15 @@ class DateExtensionTest: XCTestCase {
         let expected = "07:00"
         XCTAssertEqual(
             input.formatInTime(),
+            expected
+        )
+    }
+
+    func testFormatInTimePeriod() {
+        let input = Date(timeIntervalSince1970: 946684800.0)
+        let expected = "07:00 AM"
+        XCTAssertEqual(
+            input.formatInTimePeriod(),
             expected
         )
     }
