@@ -11,7 +11,6 @@ import Foundation
 public struct DateFormat {
     public static let date = "dd MMM yyyy"
     public static let month = "LLL"
-    public static let fullMonth = "MMMM"
     public static let year = "yyyy"
     public static let dayWithMonth = "dd MMM"
     public static let monthWithYear = "MMMM yyyy"
@@ -28,4 +27,6 @@ public struct DateFormat {
     public static let dayAndTime = "dd MMM yyyy, hh:mm aa"
     public static let dayMonthTime = "dd MMMM, HH:mm a"
     public static let shortDate = "dd/MM/yyyy"
+    public static let monthName = "MMMM"
+    public static let dayName = "EEEE"
 }
