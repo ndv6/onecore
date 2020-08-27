@@ -17,6 +17,14 @@ extension Date {
         return formatIn(format: DateFormat.month, locale: locale)
     }
 
+    public func formatInDayName(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.dayName, locale: locale)
+    }
+
+    public func formatInMonthName(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.monthName, locale: locale)
+    }
+
     public func formatInYear(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.year, locale: locale)
     }
