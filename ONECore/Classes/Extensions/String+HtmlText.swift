@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func convertHtmlToAttributedString() -> NSMutableAttributedString? {
+    public func convertHtmlToAttributedString() -> NSMutableAttributedString? {
         guard let data = data(using: .utf8) else { return nil }
         return try? NSMutableAttributedString(
             data: data,
