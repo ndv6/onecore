@@ -5,7 +5,7 @@ PODS:
     - ObjectMapper (~> 3.5.1)
   - FLEX (3.1.2)
   - ObjectMapper (3.5.3)
-  - ONECore (0.9.0):
+  - ONECore (0.10.0):
     - SDWebImage
   - R.swift (5.0.1):
     - R.swift.Library (~> 5.0.0)
@@ -43,7 +43,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  ONECore: d415ccfba29764273c064baf038f2e090f17f22f
+  ONECore: 96c88dd07103f8cd003e22894129bea291d19063
   R.swift: a8e1a7e7f38441282fbcb7a3c266076eb38b77ba
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
