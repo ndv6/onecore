@@ -9,12 +9,12 @@
 import UIKit
 
 extension FormTableViewController: UITextFieldDelegate {
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
         guard let textField = textField as? TextField else { return }
         textField.didBeginEditingHandler(textField)
     }
 
-    public func textFieldDidEndEditing(_ textField: UITextField) {
+    open func textFieldDidEndEditing(_ textField: UITextField) {
         guard let textField = textField as? TextField else { return }
         textField.didEndEditingHandler(textField)
         refreshErrorMessage()
