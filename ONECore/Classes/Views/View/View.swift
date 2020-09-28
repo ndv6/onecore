@@ -73,6 +73,7 @@ open class View: UIView {
         shadowOffset: CGSize = CGSize(width: 0.0, height: 1.0),
         shadowColor: UIColor = UIColor.black
     ) {
+        shadowLayer.removeFromSuperlayer()
         shadowLayerCornerRadius = cornerRadius
         backgroundColor = UIColor.clear
         shadowLayer = CAShapeLayer()
