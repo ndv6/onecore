@@ -60,7 +60,7 @@ open class View: UIView {
         if gradientLayer.superlayer == nil { layer.insertSublayer(gradientLayer, at: 0) }
         if shadowLayer.superlayer != nil { shadowLayer.removeFromSuperlayer() }
     }
-    
+
     public func removeGradientColors() {
         layer.sublayers?.removeAll(where: {$0.name == gradientLayerIdentifier})
     }
@@ -73,6 +73,7 @@ open class View: UIView {
         shadowOffset: CGSize = CGSize(width: 0.0, height: 1.0),
         shadowColor: UIColor = UIColor.black
     ) {
+        shadowLayer.removeFromSuperlayer()
         shadowLayerCornerRadius = cornerRadius
         backgroundColor = UIColor.clear
         shadowLayer = CAShapeLayer()

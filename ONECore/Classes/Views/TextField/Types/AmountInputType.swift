@@ -44,7 +44,7 @@ open class AmountInputType: InputType {
     }
 
     open func getOriginalText() -> String {
-        return textField.text ?? DefaultValue.emptyString
+        return textField.text?.digits ?? DefaultValue.emptyString
     }
 
     open func getDisplayText() -> String {

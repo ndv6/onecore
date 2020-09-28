@@ -1,11 +1,11 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AlamofireObjectMapper (5.2.0):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
   - FLEX (3.1.2)
-  - ObjectMapper (3.5.1)
-  - ONECore (0.6.0):
+  - ObjectMapper (3.5.3)
+  - ONECore (0.11.0):
     - SDWebImage
   - R.swift (5.0.1):
     - R.swift.Library (~> 5.0.0)
@@ -16,7 +16,7 @@ PODS:
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
-  - AlamofireObjectMapper (= 5.2.0)
+  - AlamofireObjectMapper (= 6.2.0)
   - FLEX
   - ONECore (from `../`)
   - R.swift (= 5.0.1)
@@ -24,30 +24,31 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - AlamofireObjectMapper
     - FLEX
-    - ObjectMapper
     - R.swift
     - R.swift.Library
     - SDWebImage
     - SwiftLint
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
 
 EXTERNAL SOURCES:
   ONECore:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   FLEX: e13e805fc3eec8732cc227d1f7508770d46e9587
-  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
-  ONECore: 9da7b97b49afccbfd06001872b56a17093beb361
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  ONECore: 033914d5b544354370dd8bad43725cde6ca43d03
   R.swift: a8e1a7e7f38441282fbcb7a3c266076eb38b77ba
   R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
   SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 6ac9d505615da5d891bcba75659b4014853d87ef
+PODFILE CHECKSUM: e663bff89bd20b16ce0be6494df6034f8fe3cc81
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

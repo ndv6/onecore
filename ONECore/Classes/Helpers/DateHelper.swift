@@ -11,7 +11,7 @@ import Foundation
 public class DateHelper {
     public static var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: Language.bahasa)
+        formatter.locale = Locale(identifier: CoreConfig.Date.defaultLanguage)
         return formatter
     }
 }
