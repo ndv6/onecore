@@ -39,6 +39,10 @@ class DateExtensionTest: XCTestCase {
         XCTAssertEqual(date.formatInFullDate(), "31 Des 2020")
     }
 
+    func testFormatInDateWithFullMonth() {
+        XCTAssertEqual(date.formatInDateWithFullMonth(), "31 Desember 2020")
+    }
+
     func testFormatInDay() {
         XCTAssertEqual(date.formatInDay(), "31")
     }
