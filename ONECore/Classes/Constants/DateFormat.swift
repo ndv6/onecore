@@ -10,6 +10,7 @@ import Foundation
 
 public struct DateFormat {
     public static let date = "dd MMM yyyy"
+    public static let dateFullMonth = "dd MMMM yyyy"
     public static let month = "LLL"
     public static let year = "yyyy"
     public static let dayWithMonth = "dd MMM"
