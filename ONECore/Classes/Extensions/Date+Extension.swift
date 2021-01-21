@@ -33,6 +33,10 @@ extension Date {
         return formatIn(format: DateFormat.date, locale: locale)
     }
 
+    public func formatInDateWithFullMonth(locale: Locale? = nil) -> String {
+        return formatIn(format: DateFormat.dateFullMonth, locale: locale)
+    }
+
     public func formatInDay(locale: Locale? = nil) -> String {
         return formatIn(format: DateFormat.day, locale: locale)
     }
