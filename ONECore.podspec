@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ONECore'
-  s.version = '0.13.0'
+  s.version = '0.13.1'
   s.summary = 'One Labs Core Library'
   s.description = <<-DESC
 TODO: Add long description of the pod here.
