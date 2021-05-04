@@ -108,6 +108,8 @@ open class CheckboxView: UIView {
         textLabel.contentMode = .topLeft
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.numberOfLines = 0
+        textLabel.adjustsFontSizeToFitWidth = true
+        textLabel.minimumScaleFactor = 0.5
         addSubview(textLabel)
         createTextLabelHorizontalConstraint()
         createTextLabelVerticalConstraint()
