@@ -17,4 +17,12 @@ extension Int {
     public func convertToPercentage() -> CGFloat {
         return CGFloat(self) / 100
     }
+    
+    public func convertToPositionalStyle() -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        return formatter.string(from: TimeInterval(self)) ?? DefaultValue.emptyString
+    }
 }
