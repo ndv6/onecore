@@ -44,6 +44,10 @@ open class TimePickerInputType: InputType {
         datePicker.minimumDate = minimumDate
         datePicker.maximumDate = maximumDate
         datePicker.datePickerMode = .time
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+            datePicker.sizeToFit()
+        }
     }
 
     private func applyStyle() {
