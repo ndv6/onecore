@@ -107,6 +107,9 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         renderRefreshControl()
         view.addSubview(contentView)
         configureBackgroundColor()
+        if #available(iOS 15.0, *) {
+            contentView.tableView.sectionHeaderTopPadding = DefaultValue.emptyCGFloat
+        }
     }
 
     open func resetCellSelection() {
