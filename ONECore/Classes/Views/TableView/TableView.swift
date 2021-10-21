@@ -102,6 +102,9 @@ open class TableView: View {
         if #available(iOS 9.0, *) {
             tableView.cellLayoutMarginsFollowReadableWidth = false
         }
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = DefaultValue.emptyCGFloat
+        }
     }
 
     open func setTableViewSeparator(
