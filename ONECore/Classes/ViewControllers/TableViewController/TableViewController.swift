@@ -106,7 +106,7 @@ open class TableViewController: ViewController, TableViewContainerProtocol {
         )
         renderRefreshControl()
         view.addSubview(contentView)
-        configureBackgroundColor()     
+        configureBackgroundColor()
     }
 
     open func resetCellSelection() {
