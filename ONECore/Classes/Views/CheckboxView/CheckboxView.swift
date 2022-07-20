@@ -238,6 +238,17 @@ extension CheckboxView {
             multiplier: 1,
             constant: DefaultValue.emptyCGFloat
         ).isActive = true
+        let bottomConstraint = NSLayoutConstraint(
+            item: checkboxImageView,
+            attribute: NSLayoutConstraint.Attribute.bottom,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: self,
+            attribute: NSLayoutConstraint.Attribute.bottom,
+            multiplier: 1,
+            constant: DefaultValue.emptyCGFloat
+        )
+        bottomConstraint.priority = .defaultLow
+        bottomConstraint.isActive = style.checkboxVerticalPosition != .center
     }
 
     private func createTextLabelHorizontalConstraint() {
