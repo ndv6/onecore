@@ -10,7 +10,7 @@ TODO: Add long description of the pod here.
   s.author = { 'onelabs' => 'onelabsco@gmail.com' }
   s.source = { :git => 'https://github.com/ndv6/ONECore.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.source_files = 'ONECore/Classes/**/*'
   s.dependency 'SDWebImage'
 end
