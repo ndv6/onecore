@@ -131,7 +131,7 @@ open class DropDownViewController: FormTableViewController {
         return nil
     }
 
-    private func didChangeSearchKeyword(_ input: InputProtocol, _ newValue: Any) {
+    open func didChangeSearchKeyword(_ input: InputProtocol, _ newValue: Any) {
         guard let newValue = newValue as? String else { return }
         search(keyword: newValue)
     }
