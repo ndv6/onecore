@@ -126,6 +126,10 @@ open class DropDownViewController: FormTableViewController {
     open func resetSelection() {
         selectedOption = Option()
     }
+    
+    open func resetSearchKeyword() {
+        searchKeyword = DefaultValue.emptyString
+    }
 
     open func createSearchBarCell() -> UIView? {
         return nil
