@@ -62,11 +62,11 @@ open class DropDownViewController: FormTableViewController {
 
     override open func render() {
         super.render()
+        renderSearchInputCell()
         if options.isEmpty {
             renderEmptyState()
             return
         }
-        renderSearchInputCell()
         let section = TableViewSection()
         for option in options {
             if !searchKeyword.isEmpty
