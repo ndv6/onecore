@@ -62,11 +62,11 @@ open class DropDownViewController: FormTableViewController {
 
     override open func render() {
         super.render()
+        renderSearchInputCell()
         if options.isEmpty {
             renderEmptyState()
             return
         }
-        renderSearchInputCell()
         let section = TableViewSection()
         for option in options {
             if !searchKeyword.isEmpty
@@ -126,12 +126,16 @@ open class DropDownViewController: FormTableViewController {
     open func resetSelection() {
         selectedOption = Option()
     }
+    
+    open func resetSearchKeyword() {
+        searchKeyword = DefaultValue.emptyString
+    }
 
     open func createSearchBarCell() -> UIView? {
         return nil
     }
 
-    private func didChangeSearchKeyword(_ input: InputProtocol, _ newValue: Any) {
+    open func didChangeSearchKeyword(_ input: InputProtocol, _ newValue: Any) {
         guard let newValue = newValue as? String else { return }
         search(keyword: newValue)
     }

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ONECore'
-  s.version = '0.17.0'
+  s.version = '0.18.0'
   s.summary = 'One Labs Core Library'
   s.description = <<-DESC
 TODO: Add long description of the pod here.
@@ -10,7 +10,7 @@ TODO: Add long description of the pod here.
   s.author = { 'onelabs' => 'onelabsco@gmail.com' }
   s.source = { :git => 'https://github.com/ndv6/ONECore.git', :tag => s.version.to_s }
   s.ios.deployment_target = '10.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.source_files = 'ONECore/Classes/**/*'
   s.dependency 'SDWebImage'
 end
